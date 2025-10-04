@@ -4,7 +4,6 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send, CheckCircle } from "lucide-react";
 import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import GlassCard from "@/components/GlassCard";
@@ -42,17 +41,17 @@ const teamMembers = [
 const values = [
   {
     title: "Security First",
-    description: "Every decision is made with security and compliance as the foundation, ensuring our customers' data and operations are always protected.",
+    description: "Every decision is made with security and compliance as the foundation, ensuring our customers’ data and operations are always protected.",
     icon: "🛡️"
   },
   {
     title: "Innovation Driven",
-    description: "We continuously push the boundaries of what's possible in logistics technology, leveraging cutting-edge AI and automation.",
+    description: "We continuously push the boundaries of what’s possible in logistics technology, leveraging cutting-edge AI and automation.",
     icon: "🚀"
   },
   {
     title: "Customer Success",
-    description: "Our success is measured by our customers' success. We're committed to delivering value that drives real business outcomes.",
+    description: "Our success is measured by our customers’ success. We’re committed to delivering value that drives real business outcomes.",
     icon: "🎯"
   },
   {
@@ -103,7 +102,7 @@ export default function AboutPage() {
               <span className="neon-text">Intleri</span>
             </h1>
             <p className="text-xl text-muted max-w-3xl mx-auto mb-8">
-              We're building the future of logistics intelligence through secure, modular, 
+              We’re building the future of logistics intelligence through secure, modular,
               and intelligent platform solutions that transform how businesses manage their supply chains.
             </p>
           </motion.div>
@@ -127,8 +126,8 @@ export default function AboutPage() {
                   in their supply chain operations.
                 </p>
                 <p className="text-lg leading-relaxed">
-                  We're committed to building a platform that not only meets today's challenges but anticipates 
-                  tomorrow's opportunities, providing our customers with the tools they need to thrive in an 
+                  We’re committed to building a platform that not only meets today’s challenges but anticipates
+                  tomorrow’s opportunities, providing our customers with the tools they need to thrive in an
                   increasingly complex and dynamic global economy.
                 </p>
               </div>
@@ -261,7 +260,7 @@ export default function AboutPage() {
                       Message Sent!
                     </h3>
                     <p className="text-muted">
-                      Thank you for reaching out. We'll get back to you within 24 hours.
+                      Thank you for reaching out. We’ll get back to you within 24 hours.
                     </p>
                   </motion.div>
                 ) : (
@@ -335,7 +334,7 @@ export default function AboutPage() {
                 Ready to Transform Your Logistics?
               </h2>
               <p className="text-xl text-muted mb-8 max-w-2xl mx-auto">
-                Join forward-thinking companies that are already leveraging Intleri's platform 
+                Join forward-thinking companies that are already leveraging Intleri’s platform
                 to optimize their supply chain operations.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
