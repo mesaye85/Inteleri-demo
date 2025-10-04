@@ -125,7 +125,7 @@ export default function RoboticsPage() {
                   safety, and operational excellence with comprehensive monitoring and control capabilities.
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                  {roboticsScope.map((scope, index) => (
+                  {roboticsScope.map((scope) => (
                     <div key={scope.category}>
                       <h3 className="text-xl font-semibold text-text mb-4">
                         {scope.category}

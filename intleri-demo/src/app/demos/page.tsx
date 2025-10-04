@@ -8,7 +8,7 @@ import NeonButton from "@/components/NeonButton";
 
 export const metadata: Metadata = {
   title: "Interactive Demos - Intleri",
-  description: "Experience the power of Intleri's platform through guided demonstrations of key workflows and capabilities including load bidding, emissions tracking, and risk assessment.",
+  description: "Experience the power of Intleri’s platform through guided demonstrations of key workflows and capabilities including load bidding, emissions tracking, and risk assessment.",
   keywords: "logistics demos, platform demonstrations, interactive demos, workflow examples",
 };
 
@@ -133,7 +133,7 @@ export default function DemosPage() {
               <span className="neon-text">Demos</span>
             </h1>
             <p className="text-xl text-muted max-w-3xl mx-auto mb-8">
-              Experience the power of Intleri's platform through guided demonstrations 
+              Experience the power of Intleri’s platform through guided demonstrations
               of key workflows and capabilities.
             </p>
           </motion.div>
