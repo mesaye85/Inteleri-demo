@@ -1,16 +1,13 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { Bot, Shield, Database, Eye, Zap, Settings, AlertTriangle } from "lucide-react";
-import { Metadata } from "next";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import GlassCard from "@/components/GlassCard";
 import NeonButton from "@/components/NeonButton";
 
-export const metadata: Metadata = {
-  title: "Robotics Interop & Safety - Intleri",
-  description: "Secure, intelligent robotics integration with comprehensive safety protocols, operational technology security, and standardized communication frameworks.",
-  keywords: "robotics integration, operational technology security, robot safety, automation protocols",
-};
+// metadata must be defined in a server component (layout or non-client page)
 
 const roboticsComponents = [
   {

@@ -1,4 +1,6 @@
-import { notFound } from "next/navigation";
+"use client";
+
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
@@ -29,12 +31,26 @@ const iconMap: Record<string, string> = {
   broker: "💼",
 };
 
-export default async function AppPage({ params }: AppPageProps) {
-  const { slug } = await params;
+export default function AppPage({ params }: AppPageProps) {
+  // In client components, params is available synchronously via props
+  // @ts-expect-error Next.js provides params at runtime
+  const { slug } = params;
   const app = appsData.find((a) => a.slug === slug);
 
   if (!app) {
-    notFound();
+    return (
+      <div className="min-h-screen">
+        <NavBar />
+        <div className="pt-20 pb-16">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 className="text-3xl font-bold mb-4">App not found</h1>
+            <p className="text-muted mb-6">We couldn&apos;t find that app. Please check the URL.</p>
+            <Link href="/apps" className="text-neon-1 underline">Back to apps</Link>
+          </div>
+        </div>
+        <Footer />
+      </div>
+    );
   }
 
   return (

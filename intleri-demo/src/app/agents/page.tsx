@@ -1,16 +1,11 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { Bot, Network, Database, Eye, Zap, Settings } from "lucide-react";
-import { Metadata } from "next";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import GlassCard from "@/components/GlassCard";
 import NeonButton from "@/components/NeonButton";
-
-export const metadata: Metadata = {
-  title: "Agentification (MCP) - Intleri",
-  description: "Autonomous agent ecosystem powered by Model Context Protocol (MCP) for intelligent logistics operations with self-healing, self-optimizing capabilities.",
-  keywords: "agentification, MCP, model context protocol, autonomous agents, logistics automation",
-};
 
 const agentComponents = [
   {

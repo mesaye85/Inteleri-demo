@@ -1,16 +1,13 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { Shield, Database, Cpu, Layers, Server, BarChart3 } from "lucide-react";
-import { Metadata } from "next";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import GlassCard from "@/components/GlassCard";
 import NeonButton from "@/components/NeonButton";
 
-export const metadata: Metadata = {
-  title: "Platform Architecture - Intleri",
-  description: "Built on Django REST Framework with event-driven patterns, microservices-ready architecture, and comprehensive security controls for enterprise logistics operations.",
-  keywords: "platform architecture, microservices, Django REST, security, logistics technology",
-};
+// metadata must be defined in a server component (layout or non-client page)
 
 const architectureLayers = [
   {

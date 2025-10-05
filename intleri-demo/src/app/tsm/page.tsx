@@ -1,16 +1,13 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { Coins, Shield, Database, Eye, Zap, TrendingUp } from "lucide-react";
-import { Metadata } from "next";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import GlassCard from "@/components/GlassCard";
 import NeonButton from "@/components/NeonButton";
 
-export const metadata: Metadata = {
-  title: "Tokenized Service Model (TSM) - Intleri",
-  description: "Revolutionary service architecture that tokenizes capabilities, ensuring secure execution, auditability, and granular control over logistics operations.",
-  keywords: "tokenized service model, TSM, service tokens, logistics capabilities, secure execution",
-};
+// metadata must be defined in a server component (layout or non-client page)
 
 const tsmFeatures = [
   {

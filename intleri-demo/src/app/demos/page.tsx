@@ -1,16 +1,13 @@
+"use client";
+
 import { motion } from "framer-motion";
 import { ArrowRight, CheckCircle, Clock, Truck, Leaf, Radar } from "lucide-react";
-import { Metadata } from "next";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import GlassCard from "@/components/GlassCard";
 import NeonButton from "@/components/NeonButton";
 
-export const metadata: Metadata = {
-  title: "Interactive Demos - Intleri",
-  description: "Experience the power of Intleri’s platform through guided demonstrations of key workflows and capabilities including load bidding, emissions tracking, and risk assessment.",
-  keywords: "logistics demos, platform demonstrations, interactive demos, workflow examples",
-};
+// metadata must be defined in a server component (layout or non-client page)
 
 const demoFlows = [
   {
