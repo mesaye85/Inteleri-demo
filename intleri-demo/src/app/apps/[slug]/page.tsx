@@ -68,9 +68,10 @@ export default function AppPage({ params }: AppPageProps) {
           >
             <div className="text-6xl mb-4">{iconMap[app.slug] || "📱"}</div>
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              <span className="text-text">{app.title}</span>
+              <span className="bg-gradient-to-r from-neon-1 via-neon-3 to-neon-1 bg-clip-text text-transparent">{app.title}</span>
             </h1>
             <p className="text-xl text-muted mb-6">{app.summary}</p>
+            <div className="h-px w-40 mx-auto bg-gradient-to-r from-transparent via-neon-1/60 to-transparent mb-6" />
             <div className="flex flex-wrap justify-center gap-2">
               {app.pillars.map((pillar) => (
                 <Badge

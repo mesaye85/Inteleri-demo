@@ -81,12 +81,13 @@ export default function PlatformPage() {
           >
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               <span className="text-text">Platform </span>
-              <span className="neon-text">Architecture</span>
+              <span className="bg-gradient-to-r from-neon-1 via-neon-3 to-neon-1 bg-clip-text text-transparent">Architecture</span>
             </h1>
-            <p className="text-xl text-muted max-w-3xl mx-auto mb-8">
+            <p className="text-xl text-muted max-w-3xl mx-auto mb-6">
               Built on Django REST Framework with event-driven patterns, microservices-ready architecture, 
               and comprehensive security controls for enterprise logistics operations.
             </p>
+            <div className="h-px w-48 mx-auto bg-gradient-to-r from-transparent via-neon-1/60 to-transparent" />
           </motion.div>
 
           {/* Architecture Diagram */}

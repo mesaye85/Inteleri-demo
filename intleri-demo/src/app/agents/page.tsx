@@ -84,15 +84,14 @@ export default function AgentsPage() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <div className="text-6xl mb-4">🤖</div>
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               <span className="text-text">Agentification </span>
-              <span className="neon-text">(MCP)</span>
+              <span className="bg-gradient-to-r from-neon-1 via-neon-3 to-neon-1 bg-clip-text text-transparent">(MCP)</span>
             </h1>
-            <p className="text-xl text-muted max-w-3xl mx-auto mb-8">
-              Autonomous agent ecosystem powered by Model Context Protocol (MCP) for intelligent 
-              logistics operations with self-healing, self-optimizing capabilities.
+            <p className="text-xl text-muted max-w-3xl mx-auto mb-6">
+              Autonomous agent ecosystem powered by Model Context Protocol (MCP) for intelligent logistics operations with self-healing, self-optimizing capabilities.
             </p>
+            <div className="h-px w-48 mx-auto bg-gradient-to-r from-transparent via-neon-1/60 to-transparent" />
           </motion.div>
 
           {/* MCP Overview */}

@@ -10,7 +10,7 @@ export default function GlassCard({ children, className = "", hover = true }: Gl
   return (
     <div 
       className={cn(
-        "group rounded-2xl p-6 transition-all duration-300",
+        "group rounded-2xl p-6 transition-all duration-300 glass gradient-border",
         hover && "hover:scale-[1.02] hover:shadow-glow",
         className
       )}

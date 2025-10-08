@@ -99,12 +99,13 @@ export default function AboutPage() {
           >
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               <span className="text-text">About </span>
-              <span className="neon-text">Intleri</span>
+              <span className="bg-gradient-to-r from-neon-1 via-neon-3 to-neon-1 bg-clip-text text-transparent">Intleri</span>
             </h1>
-            <p className="text-xl text-muted max-w-3xl mx-auto mb-8">
+            <p className="text-xl text-muted max-w-3xl mx-auto mb-6">
               We’re building the future of logistics intelligence through secure, modular,
               and intelligent platform solutions that transform how businesses manage their supply chains.
             </p>
+            <div className="h-px w-48 mx-auto bg-gradient-to-r from-transparent via-neon-1/60 to-transparent" />
           </motion.div>
 
           {/* Mission Section */}

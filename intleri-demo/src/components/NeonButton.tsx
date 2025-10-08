@@ -21,7 +21,7 @@ export default function NeonButton({
   const baseClasses = "relative overflow-hidden transition-all duration-300";
   
   const variantClasses = {
-    default: "bg-neon-1 text-bg hover:bg-neon-2 shadow-glow",
+    default: "bg-neon-1 text-bg hover:bg-neon-3 shadow-glow",
     neon: "bg-transparent border border-neon-1 text-neon-1 hover:bg-neon-1 hover:text-bg shadow-glow hover:shadow-[0_0_32px_var(--neon-1)]",
     ghost: "bg-transparent text-text hover:bg-white/10"
   };

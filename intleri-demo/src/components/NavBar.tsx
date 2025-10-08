@@ -34,7 +34,7 @@ export default function NavBar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "glass backdrop-blur-md" : "bg-transparent"
+        isScrolled ? "glass backdrop-blur-md gradient-border" : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -43,7 +43,7 @@ export default function NavBar() {
           <Link href="/" className="flex items-center space-x-2">
             <motion.div
               whileHover={{ scale: 1.1 }}
-              className="text-2xl font-bold neon-text"
+              className="text-2xl font-bold neon-text drop-shadow-[0_0_12px_rgba(99,230,255,0.35)]"
             >
               Intleri
             </motion.div>

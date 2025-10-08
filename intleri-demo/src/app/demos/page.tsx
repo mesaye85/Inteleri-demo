@@ -118,7 +118,6 @@ export default function DemosPage() {
       
       <div className="pt-20 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Hero Section */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -127,12 +126,12 @@ export default function DemosPage() {
           >
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               <span className="text-text">Interactive </span>
-              <span className="neon-text">Demos</span>
+              <span className="bg-gradient-to-r from-neon-1 via-neon-3 to-neon-1 bg-clip-text text-transparent">Demos</span>
             </h1>
-            <p className="text-xl text-muted max-w-3xl mx-auto mb-8">
-              Experience the power of Intleri’s platform through guided demonstrations
-              of key workflows and capabilities.
+            <p className="text-xl text-muted max-w-3xl mx-auto mb-6">
+              Explore guided flows showcasing load bidding, emissions tracking, and risk insights.
             </p>
+            <div className="h-px w-48 mx-auto bg-gradient-to-r from-transparent via-neon-1/60 to-transparent" />
           </motion.div>
 
           {/* Demo Flows */}

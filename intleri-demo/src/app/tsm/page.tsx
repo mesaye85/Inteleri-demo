@@ -79,13 +79,13 @@ export default function TSMPage() {
           >
             <div className="text-6xl mb-4">🪙</div>
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              <span className="text-text">Tokenized Service </span>
-              <span className="neon-text">Model (TSM)</span>
+              <span className="text-text">Tokenized Service Model </span>
+              <span className="bg-gradient-to-r from-neon-1 via-neon-3 to-neon-1 bg-clip-text text-transparent">(TSM)</span>
             </h1>
-            <p className="text-xl text-muted max-w-3xl mx-auto mb-8">
-              Revolutionary service architecture that tokenizes capabilities, ensuring secure execution, 
-              auditability, and granular control over logistics operations.
+            <p className="text-xl text-muted max-w-3xl mx-auto mb-6">
+              Definition, registry, execution boundary, and audit layer with neon-grade UX.
             </p>
+            <div className="h-px w-48 mx-auto bg-gradient-to-r from-transparent via-neon-1/60 to-transparent" />
           </motion.div>
 
           {/* Definition Section */}
