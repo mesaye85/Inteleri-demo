@@ -5,16 +5,9 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import NeonButton from "./NeonButton";
+import navData from "@/data/nav.json";
 
-const navigation = [
-  { name: "Platform", href: "/platform" },
-  { name: "Apps", href: "/apps" },
-  { name: "TSM", href: "/tsm" },
-  { name: "Agents", href: "/agents" },
-  { name: "Robotics", href: "/robotics" },
-  { name: "Demos", href: "/demos" },
-  { name: "About", href: "/about" },
-];
+const navigation = navData.main;
 
 export default function NavBar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -45,7 +38,7 @@ export default function NavBar() {
               whileHover={{ scale: 1.1 }}
               className="text-2xl font-bold neon-text drop-shadow-[0_0_12px_rgba(99,230,255,0.35)]"
             >
-              Intleri
+              Inteleri
             </motion.div>
           </Link>
 
@@ -53,11 +46,11 @@ export default function NavBar() {
           <div className="hidden md:flex items-center space-x-8">
             {navigation.map((item) => (
               <Link
-                key={item.name}
+                key={item.label}
                 href={item.href}
                 className="text-text hover:text-neon-1 transition-colors duration-200 relative group"
               >
-                {item.name}
+                {item.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-neon-1 transition-all duration-300 group-hover:w-full" />
               </Link>
             ))}
@@ -66,7 +59,7 @@ export default function NavBar() {
           {/* CTA Button */}
           <div className="hidden md:flex">
             <NeonButton variant="neon" size="sm">
-              Get Started
+              {navData.cta.label}
             </NeonButton>
           </div>
 
@@ -92,16 +85,16 @@ export default function NavBar() {
             <div className="flex flex-col space-y-4">
               {navigation.map((item) => (
                 <Link
-                  key={item.name}
+                  key={item.label}
                   href={item.href}
                   className="text-text hover:text-neon-1 transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  {item.name}
+                  {item.label}
                 </Link>
               ))}
               <NeonButton variant="neon" className="w-full">
-                Get Started
+                {navData.cta.label}
               </NeonButton>
             </div>
           </motion.div>

@@ -1,5 +1,6 @@
 "use client";
 
+import { use } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
@@ -32,9 +33,8 @@ const iconMap: Record<string, string> = {
 };
 
 export default function AppPage({ params }: AppPageProps) {
-  // In client components, params is available synchronously via props
-  // @ts-expect-error Next.js provides params at runtime
-  const { slug } = params;
+  // Use React.use() to unwrap the params Promise in Next.js 15
+  const { slug } = use(params);
   const app = appsData.find((a) => a.slug === slug);
 
   if (!app) {

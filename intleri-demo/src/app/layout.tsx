@@ -2,19 +2,23 @@ import type { Metadata } from "next";
 import { Inter, Roboto_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Inter({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap",
+  preload: true,
 });
 
-const geistMono = Roboto_Mono({
-  variable: "--font-geist-mono",
+const robotoMono = Roboto_Mono({
+  variable: "--font-roboto-mono",
   subsets: ["latin"],
+  display: "swap",
+  preload: true,
 });
 
 export const metadata: Metadata = {
-  title: "Intleri - Secure, Modular Logistics Intelligence",
-  description: "Security-as-a-Service platform with Total Productivity Intelligence, modular app suite, and microservices-ready architecture for modern logistics operations.",
+  title: "Inteleri - Zero-Trust Logistics Intelligence",
+  description: "Security-native platform that unifies apps, agents, and predictive analytics on a GPU-native fabric.",
 };
 
 export default function RootLayout({
@@ -25,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-bg text-text`}
+        className={`${inter.variable} ${robotoMono.variable} antialiased bg-bg text-text`}
       >
         {children}
       </body>

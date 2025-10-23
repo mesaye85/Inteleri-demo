@@ -5,7 +5,6 @@ import {
   Sparkles,
   ShieldCheck,
   Workflow,
-  Cpu,
   Radar,
   ArrowUpRight,
   LineChart
@@ -16,23 +15,18 @@ import NeonButton from "./NeonButton";
 const highlights = [
   {
     icon: ShieldCheck,
-    title: "Zero-trust perimeter",
-    description: "Hardware attestation, tenant isolation and adaptive guardrails."
+    title: "Security‑native by design (SECaaS)",
+    description: "Zero‑Trust perimeter, tenant isolation, fail‑closed controls, ML threat detection."
   },
   {
     icon: Workflow,
-    title: "Composed automations",
-    description: "Design runbooks that branch across TSM, agents and robotics."
+    title: "Predictive by default (TPI & signals)",
+    description: "Event streaming + processing; single, secured source of truth for telemetry, status, KPIs."
   },
   {
     icon: LineChart,
-    title: "Predictive telemetry",
-    description: "Neural forecasting on freight, risk, emissions and financials."
-  },
-  {
-    icon: Cpu,
-    title: "GPU-native fabric",
-    description: "Streaming inference at the edge with MCP-compatible APIs."
+    title: "Composable apps & agents (TSM + MCP)",
+    description: "Modular apps with clean boundaries; microservice‑ready architecture."
   }
 ];
 
@@ -53,32 +47,42 @@ export default function Hero() {
           >
             <div className="inline-flex items-center gap-2 rounded-full glass border border-white/10 px-4 py-2 text-sm text-muted">
               <Sparkles className="w-4 h-4 text-neon-1" />
-              <span className="text-text/80">Introducing Intleri Neon Control Surface</span>
+              <span className="text-text/80">Introducing Inteleri Neon Control Surface</span>
             </div>
 
             <h1 className="mt-8 text-5xl md:text-7xl font-semibold leading-tight tracking-tight">
-              <span className="text-text">Logistics intelligence that feels</span>
-              <span className="block bg-gradient-to-r from-neon-1 via-neon-2 to-neon-3 bg-clip-text text-transparent">
-                like piloting a living control room.
-              </span>
+              <span className="text-text">Zero‑Trust Logistics Intelligence.</span>
             </h1>
 
             <p className="mt-6 text-lg md:text-xl text-muted leading-relaxed max-w-xl">
-              Stream operational context, simulate futures, and deploy trusted automations
-              across your network. A neon-grade experience tuned for high velocity supply
-              chains.
+              Connect your ecosystem—from forecast to fleet—on a GPU‑native fabric that powers predictive decisions and <strong>composable</strong> automations.
             </p>
 
             <div className="mt-10 flex flex-col sm:flex-row gap-4 sm:items-center">
               <NeonButton variant="neon" size="lg" className="px-8 py-3">
-                Launch the platform
+                Get a demo
               </NeonButton>
               <NeonButton variant="default" size="lg" className="px-8 py-3">
-                View live demos
+                Explore the platform
               </NeonButton>
+              <a 
+                href="#demo" 
+                className="text-sm text-neon-1 hover:text-neon-2 transition-colors inline-flex items-center gap-1 mt-2 sm:mt-0"
+              >
+                See a 60‑second tour →
+              </a>
+            </div>
+            
+            <div className="mt-6">
+              <a 
+                href="/platform#security" 
+                className="text-sm text-neon-1 hover:text-neon-2 transition-colors inline-flex items-center gap-1"
+              >
+                Security model →
+              </a>
             </div>
 
-            <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4">
               {highlights.map((item) => {
                 const Icon = item.icon;
                 return (
@@ -173,22 +177,22 @@ export default function Hero() {
                     <Workflow className="w-5 h-5 text-neon-1" />
                   </div>
                   <div>
-                    <p className="text-xs uppercase tracking-widest text-muted">Autonomous TSM</p>
-                    <p className="text-lg font-semibold text-text">Runbook compiled</p>
+                    <p className="text-xs uppercase tracking-widest text-muted">TSM runbook compiled</p>
+                    <p className="text-lg font-semibold text-text">8 services orchestrated</p>
                   </div>
                 </div>
                 <ul className="mt-4 space-y-2 text-xs text-muted">
                   <li className="flex items-center gap-2">
                     <span className="h-1.5 w-1.5 rounded-full bg-neon-1" />
-                    8 microservices orchestrated
+                    8 services orchestrated
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="h-1.5 w-1.5 rounded-full bg-neon-2" />
-                    Robotics co-pilot engaged
+                    Robotics co‑pilot engaged
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="h-1.5 w-1.5 rounded-full bg-neon-3" />
-                    SOC2 guardrail verified
+                    SOC 2 controls mapped
                   </li>
                 </ul>
               </GlassCard>

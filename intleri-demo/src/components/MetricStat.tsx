@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { TrendingUp, TrendingDown, Minus } from "lucide-react";
 import { cn } from "@/lib/utils";
 import GlassCard from "./GlassCard";
+import MethodologyTooltip from "./MethodologyTooltip";
 
 interface MetricStatProps {
   title: string;
@@ -11,14 +12,16 @@ interface MetricStatProps {
   trend?: "up" | "down" | "neutral";
   trendValue?: string;
   description?: string;
+  methodologyKey?: 'post_to_award_hours' | 'eta_accuracy_pct' | 'co2_intensity_kg_per_mi';
 }
 
-export default function MetricStat({ 
+const MetricStat = React.memo(function MetricStat({ 
   title, 
   value, 
   trend = "neutral", 
   trendValue, 
-  description 
+  description,
+  methodologyKey
 }: MetricStatProps) {
   const getTrendIcon = () => {
     switch (trend) {
@@ -57,7 +60,12 @@ export default function MetricStat({
         transition={{ duration: 0.5 }}
         viewport={{ once: true }}
       >
-        <h3 className="text-xs uppercase tracking-widest text-muted mb-3">{title}</h3>
+        <div className="flex items-center gap-2 mb-3">
+          <h3 className="text-xs uppercase tracking-widest text-muted">{title}</h3>
+          {methodologyKey && (
+            <MethodologyTooltip keyName={methodologyKey} className="relative" />
+          )}
+        </div>
         <div className="text-4xl font-semibold text-text mb-3">{value}</div>
 
         {trendValue && (
@@ -73,4 +81,6 @@ export default function MetricStat({
       </motion.div>
     </GlassCard>
   );
-}
+});
+
+export default MetricStat;

@@ -20,7 +20,7 @@
   body {
     @apply text-text;
     background: var(--bg);
-    font-family: system-ui, -apple-system, sans-serif;
+    font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
   }
 }
 
@@ -76,7 +76,44 @@
   text-shadow: 0 0 10px rgba(99,230,255,0.5);
 }
 
-/* Ambient gradients + grid inspired by Opera Neon */
+/* Unified background system for consistent homepage styling */
+.page-background {
+  background:
+    radial-gradient(120% 120% at 0% 0%, rgba(99, 230, 255, 0.12), rgba(10, 15, 20, 0) 55%),
+    radial-gradient(110% 120% at 100% 5%, rgba(34, 211, 238, 0.15), rgba(10, 15, 20, 0) 60%),
+    linear-gradient(160deg, rgba(10, 15, 20, 0.95), rgba(10, 15, 20, 0.8));
+}
+
+.page-grid {
+  background-image: radial-gradient(rgba(99, 230, 255, 0.08) 1px, transparent 0);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 0.4), transparent 80%);
+  -webkit-mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 0.4), transparent 80%);
+}
+
+.page-noise {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.15'/%3E%3C/svg%3E");
+  mix-blend-mode: screen;
+  opacity: 0.1;
+}
+
+/* Section-specific background treatments */
+.section-background {
+  position: relative;
+}
+
+.section-background::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(100% 100% at 50% 0%, rgba(99, 230, 255, 0.06), rgba(10, 15, 20, 0) 70%),
+    radial-gradient(80% 80% at 20% 100%, rgba(34, 211, 238, 0.08), rgba(10, 15, 20, 0) 60%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Hero section enhanced background */
 .hero-surface {
   background:
     radial-gradient(120% 120% at 0% 0%, rgba(99, 230, 255, 0.18), rgba(10, 15, 20, 0) 55%),

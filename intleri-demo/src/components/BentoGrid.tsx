@@ -1,68 +1,48 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import {
   Shield,
   LayoutDashboard,
-  Waves,
-  Sparkles,
-  CircuitBoard,
-  GaugeCircle
+  CircuitBoard
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import GlassCard from "./GlassCard";
 
 const features = [
   {
-    title: "Command deck",
-    description: "Compose a neon-lit mosaic of cross-domain KPIs, command panels and live automations.",
-    icon: LayoutDashboard,
-    accent: "from-neon-1/20 via-transparent to-neon-2/20",
-    bullets: ["Drag + drop data spaces", "Latency-optimized tiles"],
-    className: "lg:col-span-2"
-  },
-  {
-    title: "Security-as-a-Service",
-    description: "Fail-closed policies, RBAC, and anomaly detection stitched directly into every workflow stage.",
+    title: "Trust & Risk",
+    description: "Zero‑Trust perimeter, tenant isolation, fail‑closed controls, ML threat detection.",
     icon: Shield,
     accent: "from-neon-2/20 via-transparent to-transparent",
-    bullets: ["Continuous compliance states", "Policy-as-code guardrails"]
-  },
-  {
-    title: "Signal fabric",
-    description: "Streaming ingestion unifies load boards, carrier telemetry and robotics signals in one fabric.",
-    icon: Waves,
-    accent: "from-neon-3/20 via-transparent to-transparent",
-    bullets: ["Edge caching for robotics", "MCP-native webhooks"],
+    bullets: ["Zero‑Trust perimeter", "Tenant isolation", "Fail‑closed controls", "ML threat detection"],
+    href: "/platform#security",
     className: "lg:col-span-1"
   },
   {
-    title: "Predictive copilots",
-    description: "Scenario simulations surface next-best moves, explainability, and ROI before execution.",
-    icon: Sparkles,
-    accent: "from-neon-1/20 via-neon-2/20 to-transparent",
-    bullets: ["Agentic playbooks", "Explainable outlooks"]
+    title: "Complexity",
+    description: "Composable app suite, autonomous agents, selective feature activation.",
+    icon: LayoutDashboard,
+    accent: "from-neon-1/20 via-transparent to-neon-2/20",
+    bullets: ["Composable app suite", "Autonomous agents", "Selective feature activation"],
+    href: "/apps/analytics",
+    className: "lg:col-span-1"
   },
   {
-    title: "Trusted robotics",
-    description: "TSM orchestrates AMRs, drones and cobots with safety layers, digital twins and override control.",
+    title: "Relevance",
+    description: "Tokenized Service Model (TSM): pay for value, not shelf‑ware.",
     icon: CircuitBoard,
-    accent: "from-neon-2/20 via-transparent to-neon-3/20",
-    bullets: ["ROS bridge & telemetry", "Safety sandbox"]
-  },
-  {
-    title: "Operational ledger",
-    description: "Every decision logged with emissions, spend, and risk provenance for auditors and partners.",
-    icon: GaugeCircle,
     accent: "from-neon-3/20 via-transparent to-transparent",
-    bullets: ["CO₂ intensity snapshots", "Shared with trading partners"],
+    bullets: ["Pay for value", "Not shelf‑ware", "Tokenized execution"],
+    href: "/tsm",
     className: "lg:col-span-1"
   }
 ];
 
 export default function BentoGrid() {
   return (
-    <section className="py-20">
+    <section className="py-20 section-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -71,12 +51,13 @@ export default function BentoGrid() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
+
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="text-text">Platform </span>
-            <span className="neon-text">Capabilities</span>
+            <span className="text-text">Three Value </span>
+            <span className="neon-text">Pillars</span>
           </h2>
           <p className="text-xl text-muted max-w-3xl mx-auto">
-            Comprehensive logistics intelligence powered by modular architecture and advanced security.
+            Security-first design with composable architecture and value-driven execution.
           </p>
         </motion.div>
 
@@ -92,12 +73,13 @@ export default function BentoGrid() {
                 viewport={{ once: true }}
                 className={feature.className}
               >
-                <GlassCard
-                  hover
-                  className={cn(
-                    "relative h-full overflow-hidden rounded-3xl border-white/10 bg-white/[0.04] p-6"
-                  )}
-                >
+                <Link href={feature.href}>
+                  <GlassCard
+                    hover
+                    className={cn(
+                      "relative h-full overflow-hidden rounded-3xl border-white/10 bg-white/[0.04] p-6 cursor-pointer"
+                    )}
+                  >
                   <div
                     className={cn(
                       "pointer-events-none absolute inset-0 bg-gradient-to-br opacity-60 transition-opacity duration-500 group-hover:opacity-100",
@@ -129,7 +111,8 @@ export default function BentoGrid() {
 
                   <div className="pointer-events-none absolute -right-16 -top-16 h-32 w-32 rounded-full bg-neon-1/20 blur-3xl transition-transform duration-500 group-hover:scale-110" />
                   <div className="pointer-events-none absolute -left-20 bottom-0 h-28 w-28 rounded-full bg-neon-2/10 blur-3xl transition-transform duration-500 group-hover:scale-110" />
-                </GlassCard>
+                  </GlassCard>
+                </Link>
               </motion.div>
             );
           })}
