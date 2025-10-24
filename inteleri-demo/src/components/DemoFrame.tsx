@@ -150,6 +150,7 @@ export const DemoFrame = React.memo(function DemoFrame({
           </div>
           <div className="mt-5 flex items-center gap-3">
             <button
+              type="button"
               className="rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-white/90 hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
               onClick={() => go(-1)}
               aria-label="Previous"
@@ -157,6 +158,7 @@ export const DemoFrame = React.memo(function DemoFrame({
               Prev
             </button>
             <button
+              type="button"
               className="rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-white/90 hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
               onClick={() => go(1)}
               aria-label="Next"
