@@ -67,3 +67,5 @@ export const VerbSection = React.memo(function VerbSection({
     </section>
   )
 })
+
+export default VerbSection

@@ -85,3 +85,5 @@ export const TrustBand = React.memo(function TrustBand({ className }: { classNam
     </section>
   )
 })
+
+export default TrustBand
