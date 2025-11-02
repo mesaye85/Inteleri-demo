@@ -19,22 +19,44 @@ export const AccessForm = React.memo(function AccessForm() {
   const [error, setError] = useState('')
   const errorId = useId()
 
+  const validateForm = () => {
+    const errors: string[] = []
+
+    if (!formData.name.trim()) {
+      errors.push('Full name is required')
+    }
+
+    if (!formData.email.trim()) {
+      errors.push('Email is required')
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      errors.push('Please enter a valid email address')
+    }
+
+    if (!formData.company.trim()) {
+      errors.push('Company name is required')
+    }
+
+    return errors
+  }
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setFormState('submitting')
     setError('')
 
+    const validationErrors = validateForm()
+    if (validationErrors.length > 0) {
+      setFormState('error')
+      setError(validationErrors.join('. '))
+      return
+    }
+
     try {
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 2000))
-      
-      // Simulate success/error
-      if (Math.random() > 0.1) {
-        setFormState('success')
-      } else {
-        setFormState('error')
-        setError('Rate limit exceeded. Please try again in a few minutes.')
-      }
+
+      // For demo purposes, always succeed
+      setFormState('success')
     } catch {
       setFormState('error')
       setError('Something went wrong. Please try again.')

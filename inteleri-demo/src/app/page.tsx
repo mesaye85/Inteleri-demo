@@ -1,4 +1,3 @@
-import dynamic from "next/dynamic";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
@@ -7,37 +6,17 @@ import MetricStat from "@/components/MetricStat";
 import metricsData from "@/data/metrics.json";
 import { pageMeta } from "@/lib/seo";
 
-// Lazy load heavy components with loading states
-const DemoFrame = dynamic(() => import("@/components/DemoFrame").then(mod => ({ default: mod.DemoFrame })), {
-  ssr: false,
-  loading: () => <div className="h-96 bg-slate-900/40 rounded-3xl animate-pulse mx-auto max-w-6xl" />
-});
-
-const VerbSection = dynamic(() => import("@/components/VerbSection").then(mod => ({ default: mod.VerbSection })), {
-  ssr: false,
-  loading: () => <div className="h-64 bg-slate-900/20 rounded-2xl animate-pulse" />
-});
-
-const TrustBand = dynamic(() => import("@/components/TrustBand").then(mod => ({ default: mod.TrustBand })), {
-  ssr: false,
-  loading: () => <div className="h-48 bg-slate-900/20 rounded-2xl animate-pulse" />
-});
-
-const AccessForm = dynamic(() => import("@/components/AccessForm").then(mod => ({ default: mod.AccessForm })), {
-  ssr: false,
-  loading: () => <div className="h-96 bg-slate-900/20 rounded-2xl animate-pulse max-w-2xl mx-auto" />
-});
+// Import components directly
+import { DemoFrame } from "@/components/DemoFrame";
+import { VerbSection } from "@/components/VerbSection";
+import { TrustBand } from "@/components/TrustBand";
+import { AccessForm } from "@/components/AccessForm";
 
 export const metadata = pageMeta('home');
 
 export default function Home() {
   return (
-    <div className="min-h-screen page-background">
-      <div className="absolute inset-0 page-grid opacity-40" />
-      <div className="absolute inset-0 page-noise" aria-hidden="true" />
-
-      <NavBar />
-
+    <div className="min-h-screen">
       <div className="relative z-10">
         <main
           id="main-content"

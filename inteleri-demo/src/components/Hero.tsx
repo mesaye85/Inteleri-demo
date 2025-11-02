@@ -46,16 +46,19 @@ export default function Hero() {
             className="relative"
           >
             <div className="inline-flex items-center gap-2 rounded-full glass border border-white/10 px-4 py-2 text-sm text-muted">
-              <Sparkles className="w-4 h-4 text-neon-1" />
+              <Sparkles className="w-4 h-4 text-neon-1 animate-pulse" />
               <span className="text-text/80">Introducing Inteleri Neon Control Surface</span>
             </div>
 
             <h1 className="mt-8 text-5xl md:text-7xl font-semibold leading-tight tracking-tight">
-              <span className="text-text">Zero‑Trust Logistics Intelligence.</span>
+              <span className="text-text">Zero‑Trust</span>
+              <span className="block bg-gradient-to-r from-neon-1 via-neon-2 to-neon-3 bg-clip-text text-transparent animate-pulse">
+                Logistics Intelligence.
+              </span>
             </h1>
 
             <p className="mt-6 text-lg md:text-xl text-muted leading-relaxed max-w-xl">
-              Connect your ecosystem—from forecast to fleet—on a GPU‑native fabric that powers predictive decisions and <strong>composable</strong> automations.
+              Connect your ecosystem—from forecast to fleet—on a GPU‑native fabric that powers predictive decisions and <span className="text-neon-1 font-medium">composable</span> automations.
             </p>
 
             <div className="mt-10 flex flex-col sm:flex-row gap-4 sm:items-center">
