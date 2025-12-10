@@ -1,4 +1,3 @@
-import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import BentoGrid from "@/components/BentoGrid";

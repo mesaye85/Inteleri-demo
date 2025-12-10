@@ -1,15 +1,12 @@
 import type { Metadata } from 'next'
 import seo from '@/data/seo.json'
 
-type SEOMetadata = {
-  title: string;
-  description: string;
-}
 
-type SEODictionary = Record<string, SEOMetadata>
+
+
 
 export function pageMeta(key: keyof typeof seo): Metadata {
-  const entry = seo[key as keyof SEODictionary]
+  const entry = seo[key]
   return {
     title: entry.title,
     description: entry.description,

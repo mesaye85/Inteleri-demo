@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Send, CheckCircle, Loader2, AlertCircle } from "lucide-react";
+import { Mail, Phone, CheckCircle, Loader2, AlertCircle } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
@@ -22,13 +22,13 @@ export default function AboutPageClient() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setFormState('submitting')
-    
+
     // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 2000))
-    
+
     setFormState('success')
     setFormData({ name: '', email: '', message: '' })
-    
+
     // Reset after 3 seconds
     setTimeout(() => setFormState('idle'), 3000)
   }
@@ -43,7 +43,7 @@ export default function AboutPageClient() {
   return (
     <div className="min-h-screen">
       <NavBar />
-      
+
       <main className="pt-20">
         {/* Hero Section */}
         <section className="py-20 section-background">
@@ -59,7 +59,7 @@ export default function AboutPageClient() {
                 <span className="bg-gradient-to-r from-neon-1 via-neon-3 to-neon-1 bg-clip-text text-transparent">Inteleri</span>
               </h1>
               <p className="text-xl text-muted max-w-3xl mx-auto mb-8">
-                We're building the future of logistics intelligence with security-first, 
+                We&apos;re building the future of logistics intelligence with security-first,
                 composable architecture that scales from startup to enterprise.
               </p>
               <div className="h-px w-48 mx-auto bg-gradient-to-r from-transparent via-neon-1/60 to-transparent" />
@@ -79,17 +79,17 @@ export default function AboutPageClient() {
               >
                 <h2 className="text-3xl font-bold mb-6 text-text">Our Mission</h2>
                 <p className="text-lg text-muted mb-6">
-                  To revolutionize logistics through intelligent automation, 
-                  predictive analytics, and composable architecture that puts 
+                  To revolutionize logistics through intelligent automation,
+                  predictive analytics, and composable architecture that puts
                   security and transparency first.
                 </p>
                 <p className="text-muted">
-                  We believe that the future of supply chain management lies in 
-                  the seamless integration of human expertise with AI-powered 
+                  We believe that the future of supply chain management lies in
+                  the seamless integration of human expertise with AI-powered
                   insights, all built on a foundation of zero-trust security.
                 </p>
               </motion.div>
-              
+
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -130,8 +130,8 @@ export default function AboutPageClient() {
             >
               <h2 className="text-3xl font-bold mb-6 text-text">Our Values</h2>
               <p className="text-lg text-muted max-w-3xl mx-auto">
-                Built by operators, for operators. We understand the challenges 
-                of modern logistics because we've lived them.
+                Built by operators, for operators. We understand the challenges
+                of modern logistics because we&apos;ve lived them.
               </p>
             </motion.div>
 
@@ -146,8 +146,8 @@ export default function AboutPageClient() {
                   <div className="text-4xl mb-4">🔒</div>
                   <h3 className="text-xl font-semibold mb-4 text-text">Security by Design</h3>
                   <p className="text-muted">
-                    Every feature is built with zero-trust principles. 
-                    Security isn't an afterthought—it's the foundation.
+                    Every feature is built with zero-trust principles.
+                    Security isn&apos;t an afterthought—it&apos;s the foundation.
                   </p>
                 </GlassCard>
               </motion.div>
@@ -162,7 +162,7 @@ export default function AboutPageClient() {
                   <div className="text-4xl mb-4">⚡</div>
                   <h3 className="text-xl font-semibold mb-4 text-text">Intelligence by Default</h3>
                   <p className="text-muted">
-                    Predictive insights and automated decision-making 
+                    Predictive insights and automated decision-making
                     that gets smarter with every interaction.
                   </p>
                 </GlassCard>
@@ -178,7 +178,7 @@ export default function AboutPageClient() {
                   <div className="text-4xl mb-4">🧩</div>
                   <h3 className="text-xl font-semibold mb-4 text-text">Composable Architecture</h3>
                   <p className="text-muted">
-                    Pay only for what you use. Mix and match capabilities 
+                    Pay only for what you use. Mix and match capabilities
                     to build the perfect solution for your needs.
                   </p>
                 </GlassCard>
@@ -199,7 +199,7 @@ export default function AboutPageClient() {
             >
               <h2 className="text-3xl font-bold mb-6 text-text">Get in Touch</h2>
               <p className="text-lg text-muted">
-                Ready to transform your logistics operations? Let's talk.
+                Ready to transform your logistics operations? Let&apos;s talk.
               </p>
             </motion.div>
 
@@ -243,7 +243,7 @@ export default function AboutPageClient() {
                       />
                     </div>
                   </div>
-                  
+
                   <div>
                     <label htmlFor="message" className="block text-sm font-medium text-text mb-2">
                       Message
@@ -271,7 +271,7 @@ export default function AboutPageClient() {
                         <span>+1 (555) 123-4567</span>
                       </div>
                     </div>
-                    
+
                     <NeonButton
                       type="submit"
                       disabled={formState === 'submitting'}
@@ -280,9 +280,9 @@ export default function AboutPageClient() {
                       {formState === 'submitting' && <Loader2 className="w-4 h-4 mr-2 animate-spin" />}
                       {formState === 'success' && <CheckCircle className="w-4 h-4 mr-2" />}
                       {formState === 'error' && <AlertCircle className="w-4 h-4 mr-2" />}
-                      {formState === 'submitting' ? 'Sending...' : 
-                       formState === 'success' ? 'Message Sent!' :
-                       formState === 'error' ? 'Try Again' : 'Send Message'}
+                      {formState === 'submitting' ? 'Sending...' :
+                        formState === 'success' ? 'Message Sent!' :
+                          formState === 'error' ? 'Try Again' : 'Send Message'}
                     </NeonButton>
                   </div>
                 </form>
