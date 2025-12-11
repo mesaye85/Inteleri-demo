@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import NeonButton from "./NeonButton";
 import navData from "@/data/nav.json";
+import { useModal } from "@/components/ModalContext";
 
 const navigation = navData.main;
 
@@ -13,6 +14,7 @@ export default function NavBar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const menuId = useId();
+  const { openModal } = useModal();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -43,9 +45,10 @@ export default function NavBar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       aria-label="Primary"
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "glass backdrop-blur-md gradient-border" : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out ${isScrolled
+        ? "glass shadow-[0_4px_30px_rgba(0,0,0,0.1)] backdrop-blur-xl border-b border-white/10"
+        : "bg-transparent border-transparent"
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
@@ -75,7 +78,7 @@ export default function NavBar() {
 
           {/* CTA Button */}
           <div className="hidden md:flex">
-            <NeonButton variant="neon" size="sm">
+            <NeonButton variant="neon" size="sm" onClick={() => openModal("access")}>
               {navData.cta.label}
             </NeonButton>
           </div>
@@ -118,7 +121,7 @@ export default function NavBar() {
                   {item.label}
                 </Link>
               ))}
-              <NeonButton variant="neon" className="w-full">
+              <NeonButton variant="neon" className="w-full" onClick={() => { setIsMobileMenuOpen(false); openModal("access"); }}>
                 {navData.cta.label}
               </NeonButton>
             </div>

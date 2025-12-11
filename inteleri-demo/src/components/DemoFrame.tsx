@@ -4,6 +4,8 @@ import * as React from 'react'
 import { cn } from '@/lib/utils'
 import { Shield, Bot, LineChart, Truck, FileText, Gauge } from 'lucide-react'
 import { useReducedMotion } from './Motion'
+import GlassCard from "./GlassCard"
+import NeonButton from "./NeonButton"
 
 export type DemoItem = {
   id: string
@@ -109,98 +111,101 @@ export const DemoFrame = React.memo(function DemoFrame({
     })
   }
 
+
+
+  // ... imports
+
   return (
     <section
       aria-label="Visual demo"
-      className={cn(
-        'relative rounded-3xl bg-slate-900/40 ring-1 ring-white/10 backdrop-blur-xl',
-        'shadow-[0_0_80px_-30px_rgba(56,189,248,0.45)]',
-        'p-4 sm:p-6 md:p-8',
-        className
-      )}
+      className={cn("relative", className)}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       onFocus={() => setPaused(true)}
       onBlur={() => setPaused(false)}
     >
-      <div className="flex items-center gap-2 text-xs text-white/70">
-        <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-2.5 py-1">
-          <Shield className="h-3.5 w-3.5" aria-hidden /> Demo
-        </span>
-        <span aria-live="polite">{disclaimer}</span>
-      </div>
-
-      {/* Slide */}
-      <div className="mt-4 md:mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-        <div className="md:col-span-1">
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/80">
-            {active.icon}
-            <span>{active.badge}</span>
-          </div>
-          <h3 className="mt-3 text-xl md:text-2xl font-semibold tracking-tight text-white">
-            {active.title}
-          </h3>
-          <div className="mt-3 space-y-2 text-sm text-white/80">
-            {active.lines?.map((l, i) => (
-              <div key={i} className="flex items-center gap-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-cyan-300/80" />
-                <span>{l}</span>
-              </div>
-            ))}
-          </div>
-          <div className="mt-5 flex items-center gap-3">
-            <button
-              type="button"
-              className="rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-white/90 hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
-              onClick={() => go(-1)}
-              aria-label="Previous"
-            >
-              Prev
-            </button>
-            <button
-              type="button"
-              className="rounded-full border border-white/15 bg-white/5 px-3 py-1.5 text-white/90 hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
-              onClick={() => go(1)}
-              aria-label="Next"
-            >
-              Next
-            </button>
-          </div>
+      <GlassCard hover={false} className="p-4 sm:p-6 md:p-8 bg-slate-900/40 shadow-[0_0_80px_-30px_rgba(56,189,248,0.45)]">
+        <div className="flex items-center gap-2 text-xs text-white/70">
+          <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-2.5 py-1">
+            <Shield className="h-3.5 w-3.5" aria-hidden /> Demo
+          </span>
+          <span aria-live="polite">{disclaimer}</span>
         </div>
-        <div className="md:col-span-2">
-          {/* Faux UI surface */}
-          <div
-            className={cn(
-              'relative h-64 md:h-72 rounded-2xl bg-gradient-to-br from-slate-800/70 to-slate-900/70',
-              'ring-1 ring-white/10 shadow-inner overflow-hidden'
-            )}
-            role="img"
-            aria-label={`${active.title} illustration`}
-          >
-            <div className="absolute inset-0 opacity-50 bg-[radial-gradient(ellipse_at_top_left,rgba(56,189,248,0.35),transparent_50%),radial-gradient(ellipse_at_bottom_right,rgba(168,85,247,0.25),transparent_50%)]" />
-            <div className="absolute inset-4 grid grid-cols-12 grid-rows-12 gap-2 text-[10px] sm:text-xs">
-              <div className="col-span-7 row-span-6 rounded-xl bg-white/5 ring-1 ring-white/10" />
-              <div className="col-span-5 row-span-2 rounded-xl bg-white/5 ring-1 ring-white/10" />
-              <div className="col-span-5 row-span-4 rounded-xl bg-white/5 ring-1 ring-white/10" />
-              <div className="col-span-12 row-span-4 rounded-xl bg-white/5 ring-1 ring-white/10" />
+
+        {/* Slide */}
+        <div className="mt-4 md:mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+          <div className="md:col-span-1">
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-white/80">
+              {active.icon}
+              <span>{active.badge}</span>
+            </div>
+            <h3 className="mt-3 text-xl md:text-2xl font-semibold tracking-tight text-white">
+              {active.title}
+            </h3>
+            <div className="mt-3 space-y-2 text-sm text-white/80">
+              {active.lines?.map((l, i) => (
+                <div key={i} className="flex items-start gap-2 min-w-0">
+                  <span className="h-1.5 w-1.5 rounded-full bg-cyan-300/80 mt-1.5 flex-shrink-0" />
+                  <span className="break-words min-w-0 flex-1">{l}</span>
+                </div>
+              ))}
+            </div>
+            <div className="mt-5 flex items-center gap-3">
+              <NeonButton
+                variant="ghost"
+                size="sm"
+                onClick={() => go(-1)}
+                aria-label="Previous"
+                className="rounded-full"
+              >
+                Prev
+              </NeonButton>
+              <NeonButton
+                variant="ghost"
+                size="sm"
+                onClick={() => go(1)}
+                aria-label="Next"
+                className="rounded-full"
+              >
+                Next
+              </NeonButton>
             </div>
           </div>
-          {/* Dots */}
-          <div className="mt-4 flex items-center justify-center gap-2">
-            {items.map((it, i) => (
-              <button
-                key={it.id}
-                aria-label={`Show slide ${i + 1}`}
-                onClick={() => setIndex(i)}
-                className={cn(
-                  'h-2.5 w-2.5 rounded-full ring-1 ring-white/15',
-                  i === index ? 'bg-cyan-300' : 'bg-white/20 hover:bg-white/30'
-                )}
-              />
-            ))}
+          <div className="md:col-span-2">
+            {/* Faux UI surface */}
+            <div
+              className={cn(
+                'relative h-64 md:h-72 rounded-2xl bg-gradient-to-br from-slate-800/70 to-slate-900/70',
+                'ring-1 ring-white/10 shadow-inner overflow-hidden'
+              )}
+              role="img"
+              aria-label={`${active.title} illustration`}
+            >
+              <div className="absolute inset-0 opacity-50 bg-[radial-gradient(ellipse_at_top_left,rgba(56,189,248,0.35),transparent_50%),radial-gradient(ellipse_at_bottom_right,rgba(168,85,247,0.25),transparent_50%)]" />
+              <div className="absolute inset-4 grid grid-cols-12 grid-rows-12 gap-2 text-[10px] sm:text-xs">
+                <div className="col-span-7 row-span-6 rounded-xl bg-white/5 ring-1 ring-white/10" />
+                <div className="col-span-5 row-span-2 rounded-xl bg-white/5 ring-1 ring-white/10" />
+                <div className="col-span-5 row-span-4 rounded-xl bg-white/5 ring-1 ring-white/10" />
+                <div className="col-span-12 row-span-4 rounded-xl bg-white/5 ring-1 ring-white/10" />
+              </div>
+            </div>
+            {/* Dots */}
+            <div className="mt-4 flex items-center justify-center gap-2">
+              {items.map((it, i) => (
+                <button
+                  key={it.id}
+                  aria-label={`Show slide ${i + 1}`}
+                  onClick={() => setIndex(i)}
+                  className={cn(
+                    'h-2.5 w-2.5 rounded-full ring-1 ring-white/15',
+                    i === index ? 'bg-cyan-300' : 'bg-white/20 hover:bg-white/30'
+                  )}
+                />
+              ))}
+            </div>
           </div>
         </div>
-      </div>
+      </GlassCard>
     </section>
   )
 })

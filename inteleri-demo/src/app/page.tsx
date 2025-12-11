@@ -1,3 +1,4 @@
+import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import BentoGrid from "@/components/BentoGrid";
@@ -16,6 +17,7 @@ export const metadata = pageMeta('home');
 export default function Home() {
   return (
     <div className="min-h-screen">
+      <NavBar />
       <div className="relative z-10">
         <main
           id="main-content"

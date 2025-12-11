@@ -6,6 +6,7 @@ import { TrendingUp, TrendingDown, Minus } from "lucide-react";
 import { cn } from "@/lib/utils";
 import GlassCard from "./GlassCard";
 import MethodologyTooltip from "./MethodologyTooltip";
+import CountUp from "./CountUp";
 
 interface MetricStatProps {
   title: string;
@@ -16,11 +17,11 @@ interface MetricStatProps {
   methodologyKey?: 'post_to_award_hours' | 'eta_accuracy_pct' | 'co2_intensity_kg_per_mi';
 }
 
-const MetricStat = React.memo(function MetricStat({ 
-  title, 
-  value, 
-  trend = "neutral", 
-  trendValue, 
+const MetricStat = React.memo(function MetricStat({
+  title,
+  value,
+  trend = "neutral",
+  trendValue,
   description,
   methodologyKey
 }: MetricStatProps) {
@@ -67,7 +68,18 @@ const MetricStat = React.memo(function MetricStat({
             <MethodologyTooltip keyName={methodologyKey} className="relative" />
           )}
         </div>
-        <div className="text-4xl font-semibold text-text mb-3">{value}</div>
+        <div className="text-4xl font-semibold text-text mb-3">
+          {(() => {
+            // Simple helper to parse number and suffix for CountUp
+            const match = value.match(/^([\d.]+)(.*)$/);
+            if (match) {
+              const num = parseFloat(match[1]);
+              const suffix = match[2];
+              return <CountUp value={num} suffix={suffix} decimals={value.includes('.') ? 1 : 0} />;
+            }
+            return value;
+          })()}
+        </div>
 
         {trendValue && (
           <div className={cn("flex items-center gap-1 text-sm", getTrendColor())}>

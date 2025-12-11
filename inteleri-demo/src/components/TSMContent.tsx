@@ -81,7 +81,7 @@ export default function TSMContent() {
             </span>
           </h1>
           <p className="text-xl text-muted max-w-3xl mx-auto mb-6">
-            TSM revolutionizes how you consume and pay for logistics services. Instead of paying for software licenses, 
+            TSM revolutionizes how you consume and pay for logistics services. Instead of paying for software licenses,
             you pay only for the value delivered through tokenized capabilities and measurable outcomes.
           </p>
           <div className="h-px w-48 mx-auto bg-gradient-to-r from-transparent via-neon-1/60 to-transparent" />
@@ -152,11 +152,11 @@ export default function TSMContent() {
                   <p className="text-muted mb-4 leading-relaxed">
                     {type.description}
                   </p>
-                  <div className="bg-white/5 rounded-lg p-4 border border-white/10">
+                  <GlassCard hover={false} className="p-4 border-white/10 bg-white/5">
                     <p className="text-sm text-neon-1 font-mono">
                       {type.example}
                     </p>
-                  </div>
+                  </GlassCard>
                 </motion.div>
               ))}
             </div>
@@ -176,7 +176,7 @@ export default function TSMContent() {
                 Why TSM Matters
               </h2>
               <p className="text-lg text-muted max-w-2xl mx-auto">
-                Traditional software licensing creates waste and misaligned incentives. 
+                Traditional software licensing creates waste and misaligned incentives.
                 TSM ensures you only pay for value delivered.
               </p>
             </div>
@@ -243,7 +243,7 @@ export default function TSMContent() {
               TSM in Action
             </h2>
             <div className="space-y-6">
-              <div className="bg-white/5 rounded-lg p-6 border border-white/10">
+              <GlassCard hover={false} className="p-6 border-white/10 bg-white/5">
                 <h3 className="text-lg font-semibold text-text mb-3">Scenario: Route Optimization</h3>
                 <div className="space-y-4">
                   <div className="flex items-center space-x-4">
@@ -271,7 +271,7 @@ export default function TSMContent() {
                     <p className="text-muted">Value tokens are generated based on time/fuel savings</p>
                   </div>
                 </div>
-              </div>
+              </GlassCard>
             </div>
           </GlassCard>
         </motion.div>

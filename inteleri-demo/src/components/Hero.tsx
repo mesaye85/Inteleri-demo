@@ -11,31 +11,24 @@ import {
 } from "lucide-react";
 import GlassCard from "./GlassCard";
 import NeonButton from "./NeonButton";
+import CountUp from "./CountUp";
+import heroData from "@/data/hero.json";
+import { useModal } from "@/components/ModalContext";
+import Link from "next/link";
 
-const highlights = [
-  {
-    icon: ShieldCheck,
-    title: "Security‑native by design (SECaaS)",
-    description: "Zero‑Trust perimeter, tenant isolation, fail‑closed controls, ML threat detection."
-  },
-  {
-    icon: Workflow,
-    title: "Predictive by default (TPI & signals)",
-    description: "Event streaming + processing; single, secured source of truth for telemetry, status, KPIs."
-  },
-  {
-    icon: LineChart,
-    title: "Composable apps & agents (TSM + MCP)",
-    description: "Modular apps with clean boundaries; microservice‑ready architecture."
-  }
-];
+const iconMap: Record<string, React.ElementType> = {
+  ShieldCheck,
+  Workflow,
+  LineChart
+};
 
 export default function Hero() {
+  const { openModal } = useModal();
   return (
     <section className="relative min-h-screen overflow-hidden">
       <div className="absolute inset-0 hero-surface" />
-      <div className="absolute inset-0 hero-grid opacity-40" />
-      <div className="absolute inset-0 hero-noise" aria-hidden="true" />
+      {/* Grid and Noise are now handled globally, but we can add a subtle overlay if needed. 
+          For now, we let the GlobalBackground provide the texture. */}
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-24">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -51,10 +44,22 @@ export default function Hero() {
             </div>
 
             <h1 className="mt-8 text-5xl md:text-7xl font-semibold leading-tight tracking-tight">
-              <span className="text-text">Zero‑Trust</span>
-              <span className="block bg-gradient-to-r from-neon-1 via-neon-2 to-neon-3 bg-clip-text text-transparent animate-pulse">
+              <motion.span
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.1 }}
+                className="block text-text"
+              >
+                Zero‑Trust
+              </motion.span>
+              <motion.span
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                className="block bg-gradient-to-r from-neon-1 via-neon-2 to-neon-3 bg-clip-text text-transparent animate-pulse"
+              >
                 Logistics Intelligence.
-              </span>
+              </motion.span>
             </h1>
 
             <p className="mt-6 text-lg md:text-xl text-muted leading-relaxed max-w-xl">
@@ -62,23 +67,25 @@ export default function Hero() {
             </p>
 
             <div className="mt-10 flex flex-col sm:flex-row gap-4 sm:items-center">
-              <NeonButton variant="neon" size="lg" className="px-8 py-3">
+              <NeonButton variant="neon" size="lg" className="px-8 py-3" onClick={() => openModal("access")}>
                 Get a demo
               </NeonButton>
-              <NeonButton variant="default" size="lg" className="px-8 py-3">
-                Explore the platform
-              </NeonButton>
-              <a 
-                href="#demo" 
+              <Link href="/platform">
+                <NeonButton variant="default" size="lg" className="px-8 py-3">
+                  Explore the platform
+                </NeonButton>
+              </Link>
+              <a
+                href="#demo"
                 className="text-sm text-neon-1 hover:text-neon-2 transition-colors inline-flex items-center gap-1 mt-2 sm:mt-0"
               >
                 See a 60‑second tour →
               </a>
             </div>
-            
+
             <div className="mt-6">
-              <a 
-                href="/platform#security" 
+              <a
+                href="/platform#security"
                 className="text-sm text-neon-1 hover:text-neon-2 transition-colors inline-flex items-center gap-1"
               >
                 Security model →
@@ -86,8 +93,8 @@ export default function Hero() {
             </div>
 
             <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4">
-              {highlights.map((item) => {
-                const Icon = item.icon;
+              {heroData.map((item) => {
+                const Icon = iconMap[item.icon];
                 return (
                   <div
                     key={item.title}
@@ -96,9 +103,9 @@ export default function Hero() {
                     <div className="flex h-10 w-10 items-center justify-center rounded-full bg-neon-1/10 border border-neon-1/30">
                       <Icon className="w-5 h-5 text-neon-1" />
                     </div>
-                    <div>
-                      <h3 className="text-sm font-semibold text-text">{item.title}</h3>
-                      <p className="text-xs text-muted mt-1 leading-relaxed">{item.description}</p>
+                    <div className="min-w-0 flex-1">
+                      <h3 className="text-sm font-semibold text-text truncate">{item.title}</h3>
+                      <p className="text-xs text-muted mt-1 leading-relaxed break-words">{item.description}</p>
                     </div>
                   </div>
                 );
@@ -121,7 +128,9 @@ export default function Hero() {
                 <div className="flex items-start justify-between">
                   <div>
                     <p className="text-xs uppercase tracking-widest text-muted">Network pulse</p>
-                    <p className="mt-3 text-4xl font-semibold text-text">218 routes</p>
+                    <p className="mt-3 text-4xl font-semibold text-text">
+                      <CountUp value={218} suffix=" routes" />
+                    </p>
                     <p className="mt-1 text-sm text-muted">Synced across 12 data planes</p>
                   </div>
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-neon-1/10 border border-neon-1/30">
@@ -133,7 +142,9 @@ export default function Hero() {
                   <div className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3">
                     <div>
                       <p className="text-xs uppercase tracking-widest text-muted">Carrier ETA</p>
-                      <p className="text-lg font-semibold text-text">98.2% on time</p>
+                      <p className="text-lg font-semibold text-text">
+                        <CountUp value={98.2} suffix="%" decimals={1} prefix="" /> on time
+                      </p>
                     </div>
                     <div className="flex items-center gap-1 text-xs text-emerald-300">
                       <ArrowUpRight className="h-4 w-4" />
@@ -144,12 +155,16 @@ export default function Hero() {
                   <div className="grid grid-cols-2 gap-3 text-sm text-muted">
                     <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-3">
                       <p className="text-xs uppercase tracking-widest text-muted/80">Risk alerts</p>
-                      <p className="mt-2 text-2xl font-semibold text-text">12</p>
+                      <p className="mt-2 text-2xl font-semibold text-text">
+                        <CountUp value={12} />
+                      </p>
                       <p className="text-xs text-emerald-300 mt-1">-18% WoW</p>
                     </div>
                     <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-3">
                       <p className="text-xs uppercase tracking-widest text-muted/80">CO₂ intensity</p>
-                      <p className="mt-2 text-2xl font-semibold text-text">0.82</p>
+                      <p className="mt-2 text-2xl font-semibold text-text">
+                        <CountUp value={0.82} decimals={2} />
+                      </p>
                       <p className="text-xs text-sky-300 mt-1">kg / mi avg.</p>
                     </div>
                   </div>

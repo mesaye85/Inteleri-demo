@@ -10,6 +10,8 @@ import Footer from "@/components/Footer";
 import GlassCard from "@/components/GlassCard";
 import NeonButton from "@/components/NeonButton";
 import appsData from "@/data/apps.json";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { useModal } from "@/components/ModalContext";
 
 interface AppPageProps {
   params: Promise<{
@@ -35,6 +37,7 @@ const iconMap: Record<string, string> = {
 export default function AppPage({ params }: AppPageProps) {
   // Use React.use() to unwrap the params Promise in Next.js 15
   const { slug } = use(params);
+  const { openModal } = useModal();
   const app = appsData.find((a) => a.slug === slug);
 
   if (!app) {
@@ -56,8 +59,12 @@ export default function AppPage({ params }: AppPageProps) {
   return (
     <div className="min-h-screen">
       <NavBar />
-      
-      <div className="pt-20 pb-16">
+
+      <div className="pt-24 pb-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Breadcrumbs />
+        </div>
+
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <motion.div
@@ -184,10 +191,10 @@ export default function AppPage({ params }: AppPageProps) {
               Ready to get started with {app.title}?
             </h3>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <NeonButton variant="default" size="lg">
+              <NeonButton variant="default" size="lg" onClick={() => openModal("access")}>
                 Start Free Trial
               </NeonButton>
-              <NeonButton variant="neon" size="lg">
+              <NeonButton variant="neon" size="lg" onClick={() => openModal("access")}>
                 Schedule Demo
               </NeonButton>
             </div>

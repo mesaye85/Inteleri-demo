@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
-import NavBarServer from "@/components/NavBarServer";
-import FooterServer from "@/components/FooterServer";
+import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
 import { pageMeta } from "@/lib/seo";
 
 const PlatformContent = dynamic(() => import("@/components/PlatformContent"), {
@@ -12,9 +12,9 @@ export const metadata = pageMeta('platform');
 export default function PlatformPage() {
   return (
     <div className="min-h-screen">
-      <NavBarServer />
+      <NavBar />
       <PlatformContent />
-      <FooterServer />
+      <Footer />
     </div>
   );
 }

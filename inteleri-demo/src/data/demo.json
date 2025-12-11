@@ -1,0 +1,57 @@
+[
+    {
+        "id": "load-posting",
+        "badge": "Loadboard",
+        "icon": "Truck",
+        "title": "Post → Bid → Award",
+        "lines": [
+            "Intelligent matching engaged",
+            "3 bids received · structured terms",
+            "Carrier trust tier: A"
+        ]
+    },
+    {
+        "id": "rfq",
+        "badge": "Procurement",
+        "icon": "FileText",
+        "title": "RFQ compiled",
+        "lines": [
+            "5 suppliers shortlisted",
+            "Policy token: rfq.issue.v1",
+            "Spend guardrail active"
+        ]
+    },
+    {
+        "id": "emissions",
+        "badge": "Emissions",
+        "icon": "Gauge",
+        "title": "Period report ready",
+        "lines": [
+            "Intensity: 0.82 kg/mi",
+            "Targets on track (QTD)",
+            "Export: ESG PDF"
+        ]
+    },
+    {
+        "id": "risk",
+        "badge": "Intelligence",
+        "icon": "LineChart",
+        "title": "Location risk brief",
+        "lines": [
+            "10-domain score computed",
+            "Advisory: reroute SE-05",
+            "Confidence: medium"
+        ]
+    },
+    {
+        "id": "tsm",
+        "badge": "TSM",
+        "icon": "Bot",
+        "title": "Runbook compiled",
+        "lines": [
+            "8 services orchestrated",
+            "Robotics co‑pilot engaged",
+            "SOC 2 controls mapped"
+        ]
+    }
+]

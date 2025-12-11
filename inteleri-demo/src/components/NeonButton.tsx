@@ -11,15 +11,15 @@ interface NeonButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> 
   className?: string;
 }
 
-export default function NeonButton({ 
-  variant = "neon", 
+export default function NeonButton({
+  variant = "neon",
   size = "default",
-  children, 
+  children,
   className = "",
-  ...props 
+  ...props
 }: NeonButtonProps) {
   const baseClasses = "relative overflow-hidden transition-all duration-300";
-  
+
   const variantClasses = {
     default: "bg-gradient-to-r from-neon-1 to-neon-2 text-bg hover:from-neon-2 hover:to-neon-3 shadow-[0_0_20px_rgba(99,230,255,0.3)] hover:shadow-[0_0_32px_rgba(99,230,255,0.5)]",
     neon: "bg-transparent border border-neon-1/50 text-neon-1 hover:bg-gradient-to-r hover:from-neon-1 hover:to-neon-2 hover:text-bg hover:border-transparent shadow-[0_0_16px_rgba(99,230,255,0.2)] hover:shadow-[0_0_32px_rgba(99,230,255,0.4)] backdrop-blur-sm",
@@ -37,6 +37,9 @@ export default function NeonButton({
         className={cn(baseClasses, variantClasses[variant], className)}
         {...props}
       >
+        {/* Shimmer effect */}
+        <div className="absolute inset-0 -translate-x-full group-hover:animate-[shimmer_2s_infinite] bg-gradient-to-r from-transparent via-white/10 to-transparent z-0" />
+
         <span className="relative z-10">{children}</span>
         {/* Subtle inner glow effect for neon variant */}
         {variant === 'neon' && (

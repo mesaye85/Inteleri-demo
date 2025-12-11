@@ -6,6 +6,10 @@
     outline-color: rgba(99, 230, 255, 0.5);
   }
   
+  html {
+    scroll-behavior: smooth;
+  }
+  
   body {
     color: var(--text);
     background: var(--bg);
@@ -35,15 +39,15 @@
 
 :root {
   /* Opera Neon-inspired theme tokens */
-  --bg: #0a0f14;           /* deep night */
-  --panel: rgba(255,255,255,0.06);
-  --panel-border: rgba(255,255,255,0.12);
+  --bg: #05080c;           /* deep night - slightly darker */
+  --panel: rgba(255,255,255,0.03);
+  --panel-border: rgba(255,255,255,0.08); /* sharper border */
   --text: #e6f1ff;
   --muted: #9fb3c8;
   --neon-1: #63e6ff;       /* cyan */
   --neon-2: #a78bfa;       /* violet */
   --neon-3: #22d3ee;       /* teal */
-  --glow: 0 0 24px var(--neon-1);
+  --glow: 0 0 32px -8px var(--neon-1);
   
   /* shadcn/ui compatible variables */
   --background: var(--bg);
@@ -54,7 +58,7 @@
   --popover-foreground: var(--text);
   --primary: var(--neon-1);
   --primary-foreground: var(--bg);
-  --secondary: rgba(255,255,255,0.1);
+  --secondary: rgba(255,255,255,0.08);
   --secondary-foreground: var(--text);
   --muted: var(--muted);
   --muted-foreground: var(--muted);
@@ -69,19 +73,22 @@
 
 /* Glass panel utility */
 .glass {
-  background: var(--panel);
-  backdrop-filter: blur(12px);
-  border: 1px solid var(--panel-border);
-  box-shadow: 0 0 24px rgba(99,230,255,0.15);
+  background: rgba(20, 25, 30, 0.4);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 4px 24px -1px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 /* Neon glow utilities */
 .neon-glow {
-  box-shadow: var(--glow);
+  box-shadow: 0 0 20px -5px var(--neon-1);
 }
 
 .neon-glow:hover {
-  box-shadow: 0 0 24px var(--neon-1), 0 0 48px var(--neon-1), 0 0 72px var(--neon-1);
+  box-shadow: 0 0 25px -4px var(--neon-1), 0 0 50px -10px var(--neon-1);
 }
 
 .neon-text {

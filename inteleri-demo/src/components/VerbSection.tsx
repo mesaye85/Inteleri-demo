@@ -1,6 +1,12 @@
+"use client";
+
 import React from 'react'
 import Image from 'next/image'
 import { cn } from '@/lib/utils'
+import { motion } from "framer-motion"
+import GlassCard from "./GlassCard"
+import NeonButton from "./NeonButton"
+import Link from "next/link"
 
 export type VerbSectionProps = {
   title: string
@@ -24,27 +30,37 @@ export const VerbSection = React.memo(function VerbSection({
   className
 }: VerbSectionProps) {
   return (
-    <section className={cn('py-16 md:py-20 section-background', className)} aria-labelledby={`${title}-title`}>
-      <div className={cn('mx-auto max-w-6xl px-4')}>        
+    <section className={cn('py-16 md:py-20 section-background overflow-hidden', className)} aria-labelledby={`${title}-title`}>
+      <div className={cn('mx-auto max-w-6xl px-4')}>
         <div className={cn('grid items-center gap-8 md:gap-12', reverse ? 'md:grid-cols-2 md:[&>*:first-child]:order-2' : 'md:grid-cols-2')}>
           {/* Copy */}
-          <div>
+          <motion.div
+            initial={{ opacity: 0, x: reverse ? 20 : -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
             <h2 id={`${title}-title`} className="text-2xl md:text-3xl font-semibold tracking-tight text-white">
               {title}
             </h2>
-            <p className="mt-3 text-white/80 max-w-prose">{lead}</p>
-            <div className="mt-6">
-              <a
-                href={ctaHref}
-                className="inline-flex items-center gap-2 rounded-full border border-cyan-300/30 bg-cyan-300/10 px-4 py-2 text-cyan-100 hover:bg-cyan-300/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
-              >
-                {ctaLabel}
-              </a>
+            <p className="mt-3 text-white/80 max-w-prose leading-relaxed text-lg">{lead}</p>
+            <div className="mt-8">
+              <Link href={ctaHref}>
+                <NeonButton variant="neon">
+                  {ctaLabel}
+                </NeonButton>
+              </Link>
             </div>
-          </div>
+          </motion.div>
           {/* Illustration */}
-          <div className="relative">
-            <div className="rounded-2xl bg-slate-900/40 ring-1 ring-white/10 backdrop-blur-xl p-4">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="relative"
+          >
+            <GlassCard className="p-4 bg-slate-900/40">
               {imageSrc ? (
                 <Image
                   src={imageSrc}
@@ -55,13 +71,16 @@ export const VerbSection = React.memo(function VerbSection({
                 />
               ) : (
                 <div
-                  className="h-56 md:h-64 rounded-xl bg-gradient-to-br from-slate-800/60 to-slate-900/60 ring-1 ring-white/10"
+                  className="h-56 md:h-64 rounded-xl bg-gradient-to-br from-slate-800/60 to-slate-900/60 ring-1 ring-white/10 relative overflow-hidden group"
                   role="img"
                   aria-label={`${title} illustration placeholder`}
-                />
+                >
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(120,119,198,0.3),rgba(255,255,255,0))]" />
+                  <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                </div>
               )}
-            </div>
-          </div>
+            </GlassCard>
+          </motion.div>
         </div>
       </div>
     </section>

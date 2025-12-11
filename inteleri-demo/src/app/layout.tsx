@@ -19,7 +19,15 @@ const robotoMono = Roboto_Mono({
 export const metadata: Metadata = {
   title: "Inteleri - Zero-Trust Logistics Intelligence",
   description: "Security-native platform that unifies apps, agents, and predictive analytics on a GPU-native fabric.",
+  icons: {
+    icon: '/favicon.ico',
+  },
 };
+
+import { GlobalBackground } from "@/components/GlobalBackground";
+import { ModalProvider } from "@/components/ModalContext";
+
+// ... imports
 
 export default function RootLayout({
   children,
@@ -27,14 +35,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="dark" style={{ scrollBehavior: 'smooth' }}>
       <body
-        className={`${inter.variable} ${robotoMono.variable} antialiased bg-bg text-text`}
+        className={`${inter.variable} ${robotoMono.variable} antialiased bg-bg text-text selection:bg-neon-1/30 selection:text-neon-1`}
       >
-        <a href="#main-content" className="skip-link">
-          Skip to main content
-        </a>
-        {children}
+        <ModalProvider>
+          <GlobalBackground />
+          <a href="#main-content" className="skip-link">
+            Skip to main content
+          </a>
+          {children}
+        </ModalProvider>
       </body>
     </html>
   );
