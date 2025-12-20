@@ -1,0 +1,34 @@
+{
+  "home": {
+    "title": "Inteleri — Zero‑Trust Logistics Intelligence",
+    "description": "Security‑native platform that unifies apps, agents, and predictive analytics on a GPU‑native fabric."
+  },
+  "platform": {
+    "title": "Inteleri Platform — Security by Design, Signals by Default",
+    "description": "Security layer runs first and fails closed; event‑driven Signal Fabric; modern Next.js experience."
+  },
+  "tsm": {
+    "title": "Inteleri TSM — Tokenized, Auditable Capability Delivery",
+    "description": "Pay only for value with capability‑based execution and full auditability."
+  },
+  "agents": {
+    "title": "Inteleri Agents — MCP‑Powered Autonomous Orchestration",
+    "description": "Task, Intelligence, and Integration agents operating inside a Zero‑Trust perimeter."
+  },
+  "apps": {
+    "title": "Inteleri Apps — Composable Suite for Modern Logistics",
+    "description": "Activate only what you need: Analytics, Loadboard, Emissions, Intelligence, and more."
+  },
+  "robotics": {
+    "title": "Inteleri Robotics — Secure OT Integration",
+    "description": "Identity‑bound robots with standardized tasks/telemetry and strict safety envelopes."
+  },
+  "demos": {
+    "title": "Inteleri Demos — Guided Workflows on Realistic Data",
+    "description": "Try end‑to‑end flows: load execution, emissions reporting, and risk assessment."
+  },
+  "about": {
+    "title": "About Inteleri — Mission, Values, Contact",
+    "description": "Security‑first, outcomes‑driven team building the future of logistics intelligence."
+  }
+}

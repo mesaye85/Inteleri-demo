@@ -1,0 +1,20 @@
+{
+  "post_to_award_hours": {
+    "name": "Post→Award (hours)",
+    "definition": "Median time from posting to awarded status in the load lifecycle.",
+    "source": "Demo telemetry or connected TMS stream",
+    "last_updated": "2025-01-01"
+  },
+  "eta_accuracy_pct": {
+    "name": "ETA Accuracy (%)",
+    "definition": "Share of trips with actual arrival within SLA window vs planned ETA.",
+    "source": "Carrier telemetry + route plan",
+    "last_updated": "2025-01-01"
+  },
+  "co2_intensity_kg_per_mi": {
+    "name": "CO₂ Intensity (kg/mi)",
+    "definition": "Trip‑level emissions per mile averaged across active routes.",
+    "source": "Fuel / EV logs + emissions model",
+    "last_updated": "2025-01-01"
+  }
+}
