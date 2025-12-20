@@ -1,0 +1,13 @@
+{
+  "main": [
+    { "label": "Home", "href": "/" },
+    { "label": "Platform", "href": "/platform" },
+    { "label": "Apps", "href": "/apps" },
+    { "label": "TSM", "href": "/tsm" },
+    { "label": "Agents", "href": "/agents" },
+    { "label": "Robotics", "href": "/robotics" },
+    { "label": "Demos", "href": "/demos" },
+    { "label": "About", "href": "/about" }
+  ],
+  "cta": { "label": "Get a demo", "href": "/#demo" }
+}

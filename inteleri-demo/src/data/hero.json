@@ -1,0 +1,17 @@
+[
+    {
+        "icon": "ShieldCheck",
+        "title": "Security‑native by design (SECaaS)",
+        "description": "Zero‑Trust perimeter, tenant isolation, fail‑closed controls, ML threat detection."
+    },
+    {
+        "icon": "Workflow",
+        "title": "Predictive by default (TPI & signals)",
+        "description": "Event streaming + processing; single, secured source of truth for telemetry, status, KPIs."
+    },
+    {
+        "icon": "LineChart",
+        "title": "Composable apps & agents (TSM + MCP)",
+        "description": "Modular apps with clean boundaries; microservice‑ready architecture."
+    }
+]
