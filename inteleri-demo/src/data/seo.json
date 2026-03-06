@@ -1,11 +1,11 @@
 {
   "home": {
     "title": "Inteleri — Zero‑Trust Logistics Intelligence",
-    "description": "Security‑native platform that unifies apps, agents, and predictive analytics on a GPU‑native fabric."
+    "description": "Security‑native platform that unifies apps, agents, and predictive analytics—one place to secure, analyze, and run logistics operations."
   },
   "platform": {
-    "title": "Inteleri Platform — Security by Design, Signals by Default",
-    "description": "Security layer runs first and fails closed; event‑driven Signal Fabric; modern Next.js experience."
+    "title": "Inteleri Platform — Security by Design, Real-time Insight by Default",
+    "description": "Security runs first and fails closed; real-time data layer for events and insights; fast, role-aware experience."
   },
   "tsm": {
     "title": "Inteleri TSM — Tokenized, Auditable Capability Delivery",

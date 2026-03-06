@@ -39,7 +39,7 @@ export default function ValuePillars() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: index * 0.1 }}
                         >
-                            <GlassCard className="h-full">
+                            <GlassCard className="h-full p-6 md:p-8">
                                 <div className="text-center">
                                     <div className="w-16 h-16 bg-neon-1/20 rounded-full flex items-center justify-center mx-auto mb-4">
                                         <Icon className="w-8 h-8 text-neon-1" />

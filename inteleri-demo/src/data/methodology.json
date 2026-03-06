@@ -1,20 +1,26 @@
 {
   "post_to_award_hours": {
     "name": "Post→Award (hours)",
-    "definition": "Median time from posting to awarded status in the load lifecycle.",
-    "source": "Demo telemetry or connected TMS stream",
+    "definition": "Median time from load posting to awarded status in the load lifecycle. Aligned with Loadboard execution metrics.",
+    "source": "Loadboard or Transport Management System (TMS) stream",
     "last_updated": "2025-01-01"
   },
   "eta_accuracy_pct": {
     "name": "ETA Accuracy (%)",
-    "definition": "Share of trips with actual arrival within SLA window vs planned ETA.",
+    "definition": "Share of trips with actual arrival within SLA window vs planned ETA. Used in Carrier Operations for on-time performance.",
     "source": "Carrier telemetry + route plan",
     "last_updated": "2025-01-01"
   },
   "co2_intensity_kg_per_mi": {
     "name": "CO₂ Intensity (kg/mi)",
-    "definition": "Trip‑level emissions per mile averaged across active routes.",
+    "definition": "Trip-level emissions per mile averaged across active routes. Aligned with Emissions & Sustainability and Rating (emissions category) domains.",
     "source": "Fuel / EV logs + emissions model",
+    "last_updated": "2025-01-01"
+  },
+  "risk_alerts_7d": {
+    "name": "Risk Alerts (7 days)",
+    "definition": "Count of intelligence risk alerts generated in the last 7 days. Aligned with Intelligence domain location risk and multi-domain scoring.",
+    "source": "Intelligence / risk engine",
     "last_updated": "2025-01-01"
   }
 }

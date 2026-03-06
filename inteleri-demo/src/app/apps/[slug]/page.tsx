@@ -25,7 +25,6 @@ const iconMap: Record<string, string> = {
   carrier: "🚛",
   emissions: "🌱",
   intelligence: "🧠",
-  procurement: "🤝",
   rating: "⭐",
   inventory: "📋",
   security: "🛡️",
@@ -100,7 +99,7 @@ export default function AppPage({ params }: AppPageProps) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <GlassCard>
+              <GlassCard className="p-6 md:p-8 text-left">
                 <h2 className="text-2xl font-semibold text-text mb-4">
                   Executive Summary
                 </h2>
@@ -114,15 +113,15 @@ export default function AppPage({ params }: AppPageProps) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              <GlassCard>
+              <GlassCard className="p-6 md:p-8 text-left">
                 <h2 className="text-2xl font-semibold text-text mb-4">
                   Core Capabilities
                 </h2>
                 <ul className="space-y-3">
                   {app.capabilities.map((capability, index) => (
-                    <li key={index} className="flex items-start space-x-3">
+                    <li key={index} className="flex items-start space-x-3 min-w-0">
                       <div className="w-2 h-2 bg-neon-1 rounded-full mt-2 flex-shrink-0" />
-                      <span className="text-muted">{capability}</span>
+                      <span className="text-muted min-w-0 break-words">{capability}</span>
                     </li>
                   ))}
                 </ul>
@@ -135,7 +134,7 @@ export default function AppPage({ params }: AppPageProps) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <GlassCard>
+              <GlassCard className="p-6 md:p-8 text-left">
                 <h2 className="text-2xl font-semibold text-text mb-4">
                   How it Works
                 </h2>
@@ -149,7 +148,7 @@ export default function AppPage({ params }: AppPageProps) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
             >
-              <GlassCard>
+              <GlassCard className="p-6 md:p-8 text-left">
                 <h2 className="text-2xl font-semibold text-text mb-4">
                   Security & Compliance
                 </h2>
@@ -163,15 +162,15 @@ export default function AppPage({ params }: AppPageProps) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              <GlassCard>
+              <GlassCard className="p-6 md:p-8 text-left">
                 <h2 className="text-2xl font-semibold text-text mb-4">
                   Roadmap
                 </h2>
                 <ul className="space-y-3">
                   {app.roadmap.map((item, index) => (
-                    <li key={index} className="flex items-start space-x-3">
+                    <li key={index} className="flex items-start space-x-3 min-w-0">
                       <div className="w-2 h-2 bg-neon-2 rounded-full mt-2 flex-shrink-0" />
-                      <span className="text-muted">{item}</span>
+                      <span className="text-muted min-w-0 break-words">{item}</span>
                     </li>
                   ))}
                 </ul>

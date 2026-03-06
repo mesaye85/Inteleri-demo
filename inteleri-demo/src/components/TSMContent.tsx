@@ -81,8 +81,7 @@ export default function TSMContent() {
             </span>
           </h1>
           <p className="text-xl text-muted max-w-3xl mx-auto mb-6">
-            TSM revolutionizes how you consume and pay for logistics services. Instead of paying for software licenses,
-            you pay only for the value delivered through tokenized capabilities and measurable outcomes.
+            Shelf‑ware is software or features you pay for but don’t use. TSM changes that: you buy discrete capabilities and only pay when they deliver value. Tokenized capabilities mean measurable outcomes—no big licenses, no unused modules.
           </p>
           <div className="h-px w-48 mx-auto bg-gradient-to-r from-transparent via-neon-1/60 to-transparent" />
         </motion.div>
@@ -107,7 +106,7 @@ export default function TSMContent() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                 >
-                  <GlassCard className="h-full">
+                  <GlassCard className="h-full p-6 md:p-8">
                     <div className="text-center">
                       <div className={`w-16 h-16 bg-${feature.color}/20 rounded-full flex items-center justify-center mx-auto mb-4`}>
                         <Icon className={`w-8 h-8 text-${feature.color}`} />
@@ -170,7 +169,7 @@ export default function TSMContent() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="mb-16"
         >
-          <GlassCard className="border-neon-1/30">
+          <GlassCard className="border-neon-1/30 p-6 md:p-8">
             <div className="text-center mb-8">
               <h2 className="text-3xl font-bold text-text mb-4">
                 Why TSM Matters
@@ -238,7 +237,7 @@ export default function TSMContent() {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="mb-16"
         >
-          <GlassCard>
+          <GlassCard className="p-6 md:p-8 text-left">
             <h2 className="text-3xl font-bold text-text mb-6">
               TSM in Action
             </h2>

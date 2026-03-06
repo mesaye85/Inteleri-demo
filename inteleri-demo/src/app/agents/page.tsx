@@ -107,7 +107,7 @@ export default function AgentsPage() {
               </h2>
               <div className="prose prose-lg text-muted max-w-none">
                 <p className="text-lg leading-relaxed mb-6">
-                  MCP is our proprietary protocol for agent communication and orchestration. It provides 
+                  MCP is an industry-standard protocol for agent communication and orchestration that we use across Inteleri. It provides 
                   standardized interfaces for agent discovery, communication, and coordination while 
                   maintaining security, scalability, and observability.
                 </p>

@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 import { cn } from '@/lib/utils'
-import { Shield, Bot, LineChart, Truck, FileText, Gauge } from 'lucide-react'
+import { Shield, Bot, LineChart, Truck, Zap, Gauge } from 'lucide-react'
 import { useReducedMotion } from './Motion'
 import GlassCard from "./GlassCard"
 import NeonButton from "./NeonButton"
@@ -36,14 +36,14 @@ const DEFAULT_ITEMS: DemoItem[] = [
     ]
   },
   {
-    id: 'rfq',
-    badge: 'Procurement',
-    icon: <FileText className="h-5 w-5" aria-hidden />,
-    title: 'RFQ compiled',
+    id: 'oes',
+    badge: 'OES',
+    icon: <Zap className="h-5 w-5" aria-hidden />,
+    title: 'Event stream processed',
     lines: [
-      '5 suppliers shortlisted',
-      'Policy token: rfq.issue.v1',
-      'Spend guardrail active'
+      'Operational Event Stream (OES) ingested',
+      'Trace ID linked · policy token validated',
+      'Downstream workflows triggered'
     ]
   },
   {
@@ -197,7 +197,7 @@ export const DemoFrame = React.memo(function DemoFrame({
                   aria-label={`Show slide ${i + 1}`}
                   onClick={() => setIndex(i)}
                   className={cn(
-                    'h-2.5 w-2.5 rounded-full ring-1 ring-white/15',
+                    'h-2.5 w-2.5 rounded-full ring-1 ring-white/15 outline-none focus-visible:ring-2 focus-visible:ring-neon-1 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900',
                     i === index ? 'bg-cyan-300' : 'bg-white/20 hover:bg-white/30'
                   )}
                 />

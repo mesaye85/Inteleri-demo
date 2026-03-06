@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useId } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import NeonButton from "./NeonButton";
@@ -10,7 +11,13 @@ import { useModal } from "@/components/ModalContext";
 
 const navigation = navData.main;
 
+function isActivePath(href: string, pathname: string): boolean {
+  if (href === "/") return pathname === "/";
+  return pathname === href || pathname.startsWith(href + "/");
+}
+
 export default function NavBar() {
+  const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const menuId = useId();
@@ -64,16 +71,20 @@ export default function NavBar() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {navigation.map((item) => (
-              <Link
-                key={item.label}
-                href={item.href}
-                className="text-text hover:text-neon-1 transition-colors duration-200 relative group"
-              >
-                {item.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-neon-1 transition-all duration-300 group-hover:w-full" />
-              </Link>
-            ))}
+            {navigation.map((item) => {
+              const active = isActivePath(item.href, pathname ?? "");
+              return (
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  aria-current={active ? "page" : undefined}
+                  className={`transition-colors duration-200 relative group rounded outline-none focus-visible:ring-2 focus-visible:ring-neon-1 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)] ${active ? "text-neon-1" : "text-text hover:text-neon-1"}`}
+                >
+                  {item.label}
+                  <span className={`absolute -bottom-1 left-0 h-0.5 bg-neon-1 transition-all duration-300 ${active ? "w-full" : "w-0 group-hover:w-full"}`} />
+                </Link>
+              );
+            })}
           </div>
 
           {/* CTA Button */}
@@ -88,7 +99,7 @@ export default function NavBar() {
             <button
               type="button"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-text hover:text-neon-1 transition-colors"
+              className="text-text hover:text-neon-1 transition-colors rounded outline-none focus-visible:ring-2 focus-visible:ring-neon-1 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)]"
               aria-expanded={isMobileMenuOpen}
               aria-controls={menuId}
               aria-label={isMobileMenuOpen ? "Close navigation" : "Open navigation"}
@@ -111,16 +122,20 @@ export default function NavBar() {
             className="md:hidden glass rounded-lg mt-2 p-4"
           >
             <div className="flex flex-col space-y-4">
-              {navigation.map((item) => (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  className="text-text hover:text-neon-1 transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {item.label}
-                </Link>
-              ))}
+              {navigation.map((item) => {
+                const active = isActivePath(item.href, pathname ?? "");
+                return (
+                  <Link
+                    key={item.label}
+                    href={item.href}
+                    aria-current={active ? "page" : undefined}
+                    className={`transition-colors rounded outline-none focus-visible:ring-2 focus-visible:ring-neon-1 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)] ${active ? "text-neon-1 font-medium" : "text-text hover:text-neon-1"}`}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                );
+              })}
               <NeonButton variant="neon" className="w-full" onClick={() => { setIsMobileMenuOpen(false); openModal("access"); }}>
                 {navData.cta.label}
               </NeonButton>

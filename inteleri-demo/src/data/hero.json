@@ -2,16 +2,16 @@
     {
         "icon": "ShieldCheck",
         "title": "Security‑native by design (SECaaS)",
-        "description": "Zero‑Trust perimeter, tenant isolation, fail‑closed controls, ML threat detection."
+        "description": "Security as a Service built in from the start: we verify every request and never assume trust (Zero‑Trust). If something goes wrong, access is denied by default and the event is logged (fail closed). Tenant isolation, role-based access, and ML-assisted threat detection."
     },
     {
         "icon": "Workflow",
         "title": "Predictive by default (TPI & signals)",
-        "description": "Event streaming + processing; single, secured source of truth for telemetry, status, KPIs."
+        "description": "Total Performance Intelligence (TPI) and real-time signals: a single, secured source of truth for telemetry, status, and KPIs. Event streaming and processing turn your operations into predictive metrics and alerts."
     },
     {
         "icon": "LineChart",
         "title": "Composable apps & agents (TSM + MCP)",
-        "description": "Modular apps with clean boundaries; microservice‑ready architecture."
+        "description": "Use only the modules you need; pay for what you use (TSM: Tokenized Service Model). Plug-in agents (MCP: Model Context Protocol) extend the platform. Modular apps with clear boundaries."
     }
 ]

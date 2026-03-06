@@ -35,6 +35,11 @@
     transform: translate(-50%, 16px);
     opacity: 1;
   }
+
+  .skip-link:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--neon-1);
+  }
 }
 
 :root {

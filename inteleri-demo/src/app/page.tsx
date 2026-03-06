@@ -37,14 +37,14 @@ export default function Home() {
           {/* Verb Sections */}
           <VerbSection
             title="Secures every request"
-            lead="Security runs first and fails closed. RBAC, tenant isolation, input validation, rate limits, anomaly detection, and forensics‑grade logs across apps and agents."
+            lead="Security runs first and fails closed—if in doubt, we block and log. Role-based access (RBAC), tenant isolation, and tamper-evident audit logs across apps and agents."
             ctaHref="/platform#security"
             ctaLabel="View Security Model"
           />
 
           <VerbSection
             title="Understands your operations"
-            lead="An event‑driven Signal Fabric streams and correlates telemetry for predictive KPIs, TPI scoring, and anomaly detection."
+            lead="A real-time data layer turns your operations into predictive KPIs and alerts. Event streaming and Total Performance Intelligence (TPI) drive anomaly detection and smarter decisions."
             ctaHref="/apps/analytics"
             ctaLabel="Explore Analytics"
             reverse
@@ -52,7 +52,7 @@ export default function Home() {
 
           <VerbSection
             title="Orchestrates your flow"
-            lead="TSM runbooks and autonomous agents coordinate complex workflows with safety envelopes and real-time observability."
+            lead="TSM (Tokenized Service Model): pay for what you use. Runbooks and autonomous agents coordinate complex workflows with safety envelopes (guardrails that keep automated actions within safe limits) and real-time observability."
             ctaHref="/tsm"
             ctaLabel="Learn about TSM"
           />
@@ -68,7 +68,7 @@ export default function Home() {
                   value={`${metricsData.post_to_award_hours}h`}
                   trend="down"
                   trendValue={`${metricsData.post_to_award_delta_pct}%`}
-                  description="Accelerated procurement cycles"
+                  description="Faster load-to-award (Loadboard)"
                   methodologyKey="post_to_award_hours"
                 />
                 <MetricStat
@@ -92,6 +92,7 @@ export default function Home() {
                   value={`${metricsData.risk_alerts_7d}`}
                   trend="neutral"
                   description="last 7 days"
+                  methodologyKey="risk_alerts_7d"
                 />
               </div>
             </div>
@@ -101,7 +102,7 @@ export default function Home() {
           <TrustBand />
 
           {/* Access Form */}
-          <section className="py-20 section-background">
+          <section id="request-access" className="py-20 section-background scroll-mt-24">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">

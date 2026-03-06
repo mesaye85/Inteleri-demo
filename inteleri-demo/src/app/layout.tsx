@@ -18,7 +18,7 @@ const robotoMono = Roboto_Mono({
 
 export const metadata: Metadata = {
   title: "Inteleri - Zero-Trust Logistics Intelligence",
-  description: "Security-native platform that unifies apps, agents, and predictive analytics on a GPU-native fabric.",
+  description: "Security-native platform that unifies apps, agents, and predictive analytics—one place to secure, analyze, and run logistics operations.",
   icons: {
     icon: '/favicon.ico',
   },

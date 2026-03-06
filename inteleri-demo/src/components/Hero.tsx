@@ -63,7 +63,7 @@ export default function Hero() {
             </h1>
 
             <p className="mt-6 text-lg md:text-xl text-muted leading-relaxed max-w-xl">
-              Connect your ecosystem—from forecast to fleet—on a GPU‑native fabric that powers predictive decisions and <span className="text-neon-1 font-medium">composable</span> automations.
+              One platform to secure, analyze, and run your logistics operations. Connect your ecosystem—from forecast to fleet—with predictive decisions and <span className="text-neon-1 font-medium">composable</span> automations.
             </p>
 
             <div className="mt-10 flex flex-col sm:flex-row gap-4 sm:items-center">
@@ -77,16 +77,22 @@ export default function Hero() {
               </Link>
               <a
                 href="#demo"
-                className="text-sm text-neon-1 hover:text-neon-2 transition-colors inline-flex items-center gap-1 mt-2 sm:mt-0"
+                className="text-sm text-neon-1 hover:text-neon-2 transition-colors inline-flex items-center gap-1 mt-2 sm:mt-0 rounded outline-none focus-visible:ring-2 focus-visible:ring-neon-1 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)]"
               >
                 See a 60‑second tour →
+              </a>
+              <a
+                href="#request-access"
+                className="text-sm text-neon-1 hover:text-neon-2 transition-colors inline-flex items-center gap-1 mt-2 sm:mt-0 rounded outline-none focus-visible:ring-2 focus-visible:ring-neon-1 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)]"
+              >
+                Request Access
               </a>
             </div>
 
             <div className="mt-6">
               <a
                 href="/platform#security"
-                className="text-sm text-neon-1 hover:text-neon-2 transition-colors inline-flex items-center gap-1"
+                className="text-sm text-neon-1 hover:text-neon-2 transition-colors inline-flex items-center gap-1 rounded outline-none focus-visible:ring-2 focus-visible:ring-neon-1 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)]"
               >
                 Security model →
               </a>

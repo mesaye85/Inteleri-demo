@@ -14,7 +14,7 @@ interface MetricStatProps {
   trend?: "up" | "down" | "neutral";
   trendValue?: string;
   description?: string;
-  methodologyKey?: 'post_to_award_hours' | 'eta_accuracy_pct' | 'co2_intensity_kg_per_mi';
+  methodologyKey?: 'post_to_award_hours' | 'eta_accuracy_pct' | 'co2_intensity_kg_per_mi' | 'risk_alerts_7d';
 }
 
 const MetricStat = React.memo(function MetricStat({
@@ -51,7 +51,7 @@ const MetricStat = React.memo(function MetricStat({
     <GlassCard
       hover
       className={cn(
-        "relative overflow-hidden text-left",
+        "relative overflow-hidden text-left p-6",
         "before:absolute before:inset-x-6 before:top-0 before:h-px before:bg-gradient-to-r before:from-transparent before:via-neon-1/60 before:to-transparent"
       )}
     >

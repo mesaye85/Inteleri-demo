@@ -7,28 +7,28 @@ import GlassCard from "../GlassCard";
 const architectureLayers = [
     {
         name: "Security Layer (SECaaS)",
-        description: "Runs before business logic. Strong RBAC, tenant isolation, input validation, rate limiting, anomaly detection, forensics‑grade audit trail.",
+        description: "Security as a Service: runs before business logic. Role-based access control (RBAC), tenant isolation, input validation, rate limiting, anomaly detection, and tamper-evident, detailed audit logs.",
         icon: Shield,
         technologies: ["RBAC", "Tenant Isolation", "Input Validation", "Rate Limiting", "ML Threat Detection"],
         color: "neon-2"
     },
     {
         name: "Signal Fabric (Data Layer)",
-        description: "Event streaming + processing; single, secured source of truth for telemetry, status, KPIs, and model outputs.",
+        description: "Real-time data layer that connects your operations. Event streaming and processing; single, secured source of truth for telemetry, status, KPIs, and model outputs.",
         icon: Database,
         technologies: ["Event Streaming", "Telemetry", "Status Tracking", "KPI Monitoring", "Model Outputs"],
         color: "neon-1"
     },
     {
         name: "Application Layer",
-        description: "Modular apps (Analytics, Loadboard, Carrier, Emissions, Intelligence, Procurement, Rating, Inventory, Security, Trust, Warehouse, Broker). Clean boundaries; microservice‑ready.",
+        description: "Modular apps (Analytics, Loadboard, Carrier, Emissions, Intelligence, OES, Rating, Inventory, Security, Trust Pilot, Warehouse, Broker). Clean boundaries; microservice‑ready.",
         icon: Cpu,
         technologies: ["Analytics", "Loadboard", "Carrier", "Emissions", "Intelligence"],
         color: "neon-3"
     },
     {
         name: "Experience Layer (Next.js/React)",
-        description: "High‑performance, motion‑assisted UI (custom neon/glass design), progressive disclosure, command palette.",
+        description: "Fast, role-aware UI with real-time feedback. High‑performance, motion‑assisted interface (custom neon/glass design) that adapts to your role.",
         icon: Layers,
         technologies: ["Next.js", "React", "Motion UI", "Progressive Disclosure", "Command Palette"],
         color: "neon-1"

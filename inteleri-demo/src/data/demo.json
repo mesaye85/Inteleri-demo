@@ -11,14 +11,15 @@
         ]
     },
     {
-        "id": "rfq",
-        "badge": "Procurement",
-        "icon": "FileText",
-        "title": "RFQ compiled",
+        "id": "oes",
+        "badge": "OES",
+        "icon": "Zap",
+        "title": "Event stream processed",
         "lines": [
-            "5 suppliers shortlisted",
-            "Policy token: rfq.issue.v1",
-            "Spend guardrail active"
+            "Operational Event Stream (OES) ingested",
+            "Events from your systems flow in and trigger the right workflows automatically.",
+            "Trace ID linked · policy token validated",
+            "Downstream workflows triggered"
         ]
     },
     {

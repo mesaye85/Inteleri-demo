@@ -18,7 +18,7 @@ export default function NeonButton({
   className = "",
   ...props
 }: NeonButtonProps) {
-  const baseClasses = "relative overflow-hidden transition-all duration-300";
+  const baseClasses = "relative overflow-hidden transition-all duration-300 outline-none focus-visible:ring-2 focus-visible:ring-neon-1 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)]";
 
   const variantClasses = {
     default: "bg-gradient-to-r from-neon-1 to-neon-2 text-bg hover:from-neon-2 hover:to-neon-3 shadow-[0_0_20px_rgba(99,230,255,0.3)] hover:shadow-[0_0_32px_rgba(99,230,255,0.5)]",

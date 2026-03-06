@@ -18,7 +18,6 @@ const iconMap: Record<string, string> = {
   carrier: "🚛",
   emissions: "🌱",
   intelligence: "🧠",
-  procurement: "🤝",
   rating: "⭐",
   inventory: "📋",
   security: "🛡️",
@@ -33,8 +32,11 @@ export default function AppCard({ slug, title, summary, pillars }: AppCardProps)
       whileHover={{ y: -5 }}
       transition={{ duration: 0.2 }}
     >
-      <Link href={`/apps/${slug}`}>
-        <GlassCard hover className="h-full cursor-pointer">
+      <Link
+        href={`/apps/${slug}`}
+        className="block rounded-3xl outline-none focus-visible:ring-2 focus-visible:ring-neon-1 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)]"
+      >
+        <GlassCard hover className="h-full cursor-pointer p-6 md:p-8 text-left">
           <div className="flex items-start space-x-4">
             <div className="text-4xl">{iconMap[slug] || "📱"}</div>
             <div className="flex-1">

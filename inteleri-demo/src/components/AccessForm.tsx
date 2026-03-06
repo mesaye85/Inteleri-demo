@@ -127,7 +127,7 @@ export const AccessForm = React.memo(function AccessForm() {
               required
               autoComplete="name"
               suppressHydrationWarning
-              className="w-full px-4 py-3 rounded-xl bg-white/[0.05] border border-white/10 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-cyan-300 focus:border-transparent"
+              className="w-full px-4 py-3 rounded-xl bg-white/[0.05] border border-white/10 text-white placeholder-white/50 outline-none focus-visible:ring-2 focus-visible:ring-neon-1 focus-visible:border-transparent"
               placeholder="Enter your full name"
             />
           </div>
@@ -145,7 +145,7 @@ export const AccessForm = React.memo(function AccessForm() {
               required
               autoComplete="email"
               suppressHydrationWarning
-              className="w-full px-4 py-3 rounded-xl bg-white/[0.05] border border-white/10 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-cyan-300 focus:border-transparent"
+              className="w-full px-4 py-3 rounded-xl bg-white/[0.05] border border-white/10 text-white placeholder-white/50 outline-none focus-visible:ring-2 focus-visible:ring-neon-1 focus-visible:border-transparent"
               placeholder="your.email@company.com"
             />
           </div>
@@ -164,7 +164,7 @@ export const AccessForm = React.memo(function AccessForm() {
             required
             autoComplete="organization"
             suppressHydrationWarning
-            className="w-full px-4 py-3 rounded-xl bg-white/[0.05] border border-white/10 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-cyan-300 focus:border-transparent"
+            className="w-full px-4 py-3 rounded-xl bg-white/[0.05] border border-white/10 text-white placeholder-white/50 outline-none focus-visible:ring-2 focus-visible:ring-neon-1 focus-visible:border-transparent"
             placeholder="Your company name"
           />
         </div>
@@ -179,7 +179,7 @@ export const AccessForm = React.memo(function AccessForm() {
             value={formData.modules}
             onChange={handleInputChange}
             rows={3}
-            className="w-full px-4 py-3 rounded-xl bg-white/[0.05] border border-white/10 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-cyan-300 focus:border-transparent resize-none"
+            className="w-full px-4 py-3 rounded-xl bg-white/[0.05] border border-white/10 text-white placeholder-white/50 outline-none focus-visible:ring-2 focus-visible:ring-neon-1 focus-visible:border-transparent resize-none"
             placeholder="Analytics, Loadboard, Emissions, Intelligence, TSM, Agents..."
           />
         </div>
@@ -196,7 +196,7 @@ export const AccessForm = React.memo(function AccessForm() {
             onChange={handleInputChange}
             autoComplete="one-time-code"
             suppressHydrationWarning
-            className="w-full px-4 py-3 rounded-xl bg-white/[0.05] border border-white/10 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-cyan-300 focus:border-transparent"
+            className="w-full px-4 py-3 rounded-xl bg-white/[0.05] border border-white/10 text-white placeholder-white/50 outline-none focus-visible:ring-2 focus-visible:ring-neon-1 focus-visible:border-transparent"
             placeholder="If you have an access code"
           />
         </div>
@@ -221,7 +221,7 @@ export const AccessForm = React.memo(function AccessForm() {
             'w-full px-6 py-4 rounded-xl font-medium transition-all duration-200',
             'bg-gradient-to-r from-cyan-500 to-blue-500 text-white',
             'hover:from-cyan-400 hover:to-blue-400',
-            'focus:outline-none focus:ring-2 focus:ring-cyan-300 focus:ring-offset-2 focus:ring-offset-slate-900',
+            'outline-none focus-visible:ring-2 focus-visible:ring-neon-1 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900',
             'disabled:opacity-50 disabled:cursor-not-allowed',
             'flex items-center justify-center gap-2'
           )}

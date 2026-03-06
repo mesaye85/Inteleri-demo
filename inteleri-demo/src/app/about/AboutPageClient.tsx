@@ -113,11 +113,11 @@ export default function AboutPageClient() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="mb-16"
           >
-            <GlassCard className="p-8">
+            <GlassCard className="p-8 text-left">
               <h2 className="text-3xl font-bold text-text mb-6">
                 Our Mission
               </h2>
-              <div className="prose prose-lg text-muted max-w-none">
+              <div className="prose prose-lg text-muted max-w-none text-left">
                 <p className="text-lg leading-relaxed mb-6">
                   At Intleri, we believe that logistics intelligence should be secure, modular, and accessible.
                   Our mission is to democratize advanced logistics capabilities through our platform, enabling
@@ -151,7 +151,7 @@ export default function AboutPageClient() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                 >
-                  <GlassCard className="h-full">
+                  <GlassCard className="h-full p-6 md:p-8">
                     <div className="text-center">
                       <div className="text-4xl mb-4">{value.icon}</div>
                       <h3 className="text-xl font-semibold text-text mb-3">
@@ -185,7 +185,7 @@ export default function AboutPageClient() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                 >
-                  <GlassCard className="h-full text-center">
+                  <GlassCard className="h-full text-center p-6 md:p-8">
                     <div className="text-6xl mb-4">{member.avatar}</div>
                     <h3 className="text-xl font-semibold text-text mb-2">
                       {member.name}
