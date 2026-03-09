@@ -1,0 +1,9 @@
+{
+  "post_to_award_hours": 3.2,
+  "post_to_award_delta_pct": -12,
+  "eta_accuracy_pct": 94.6,
+  "eta_accuracy_delta_pct": 2.1,
+  "co2_intensity_kg_per_mi": 0.82,
+  "co2_delta_pct": -5.3,
+  "risk_alerts_7d": 12
+}

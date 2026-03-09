@@ -1,0 +1,206 @@
+[
+  {
+    "slug": "analytics",
+    "name": "Analytics",
+    "title": "Analytics",
+    "value": "Total Performance Intelligence across 19 domains; find and fix hidden gaps.",
+    "summary": "Total Performance Intelligence across 19 domains; find and fix hidden gaps.",
+    "description": "Comprehensive analytics platform providing Total Performance Intelligence across 19 domains to identify and resolve operational gaps.",
+    "howItWorks": "Leverages advanced data processing and machine learning to analyze performance metrics across multiple domains, providing actionable insights and recommendations.",
+    "security": "Built with zero-trust architecture, all data is encrypted in transit and at rest with comprehensive audit trails.",
+    "capabilities": ["TPI", "Forecasting", "Anomaly Detection", "Correlation", "Scheduled Reports"],
+    "pillars": ["TPI", "Forecasting", "Anomaly"],
+    "roadmap": [
+      "Enhanced predictive modeling",
+      "Real-time dashboard updates",
+      "Advanced anomaly detection"
+    ]
+  },
+  {
+    "slug": "loadboard",
+    "name": "Loadboard",
+    "title": "Loadboard",
+    "value": "Faster execution with intelligent matching and structured bidding.",
+    "summary": "Faster execution with intelligent matching and structured bidding.",
+    "description": "Intelligent load matching platform that accelerates execution through smart algorithms and structured bidding processes.",
+    "howItWorks": "Uses AI-powered matching algorithms to connect shippers with carriers, optimizing routes and reducing empty miles.",
+    "security": "Secure marketplace with encrypted communications and verified carrier credentials.",
+    "capabilities": ["Marketplace", "Tracking", "Automated Routing", "Award Workflows", "KPIs"],
+    "pillars": ["Marketplace", "Tracking", "Routing"],
+    "roadmap": [
+      "Enhanced matching algorithms",
+      "Real-time tracking integration",
+      "Automated contract generation"
+    ]
+  },
+  {
+    "slug": "carrier",
+    "name": "Carrier",
+    "title": "Carrier",
+    "value": "Link drivers, vehicles, and commitments to measurable outcomes.",
+    "summary": "Link drivers, vehicles, and commitments to measurable outcomes.",
+    "description": "Comprehensive carrier management system that connects drivers, vehicles, and commitments to deliver measurable operational outcomes.",
+    "howItWorks": "Provides real-time telemetry and performance tracking to ensure on-time delivery and safety compliance.",
+    "security": "Multi-tenant isolation with role-based access control and comprehensive audit logging.",
+    "capabilities": ["Telemetry", "On‑time", "Safety", "Exceptions"],
+    "pillars": ["Telemetry", "On‑time", "Safety"],
+    "roadmap": [
+      "Advanced telemetry integration",
+      "Predictive maintenance alerts",
+      "Enhanced safety monitoring"
+    ]
+  },
+  {
+    "slug": "emissions",
+    "name": "Emissions",
+    "title": "Emissions",
+    "value": "Trip‑level CO₂ with baselines, targets, and audit‑ready exports.",
+    "summary": "Trip‑level CO₂ with baselines, targets, and audit‑ready exports.",
+    "description": "Comprehensive emissions tracking system providing trip-level CO₂ monitoring with baselines, targets, and audit-ready reporting.",
+    "howItWorks": "Captures real-time emissions data from vehicles and calculates CO₂ intensity with baseline comparisons and target tracking.",
+    "security": "Data integrity protection with cryptographic signatures and immutable audit trails for compliance reporting.",
+    "capabilities": ["Intensity Metrics", "Rollups", "Target Tracking", "Regulatory Reports"],
+    "pillars": ["CO2", "Targets", "Reports"],
+    "roadmap": [
+      "Real-time emissions monitoring",
+      "Automated compliance reporting",
+      "Carbon offset integration"
+    ]
+  },
+  {
+    "slug": "intelligence",
+    "name": "Intelligence",
+    "title": "Intelligence",
+    "value": "Multi‑domain risk scoring + executive‑ready location briefs.",
+    "summary": "Multi‑domain risk scoring + executive‑ready location briefs.",
+    "description": "Advanced intelligence platform providing multi-domain risk scoring and executive-ready location briefs for informed decision making.",
+    "howItWorks": "Analyzes multiple risk domains to generate comprehensive risk scores and location assessments with actionable recommendations.",
+    "security": "Secure risk data processing with encrypted storage and controlled access to sensitive intelligence.",
+    "capabilities": ["Risk Domains", "Location Assessments", "Briefs", "Actions"],
+    "pillars": ["Risk", "Locations", "Reports"],
+    "roadmap": [
+      "Enhanced risk modeling",
+      "Real-time threat assessment",
+      "Automated brief generation"
+    ]
+  },
+  {
+    "slug": "procurement",
+    "name": "Procurement",
+    "title": "Procurement",
+    "value": "Requisition‑to‑PO with RFQs, supplier scoring, and contract lifecycle.",
+    "summary": "Requisition‑to‑PO with RFQs, supplier scoring, and contract lifecycle.",
+    "description": "End-to-end procurement platform managing requisition-to-PO workflows with RFQ generation, supplier scoring, and contract lifecycle management.",
+    "howItWorks": "Streamlines procurement processes from initial requisition through contract execution with automated scoring and approval workflows.",
+    "security": "Secure procurement data with role-based access control and audit trails for all transactions.",
+    "capabilities": ["RFQs", "Approvals", "Supplier Performance", "Contracts", "Spend"],
+    "pillars": ["RFQ", "Contracts", "Spend"],
+    "roadmap": [
+      "Automated RFQ generation",
+      "Enhanced supplier scoring",
+      "Contract automation"
+    ]
+  },
+  {
+    "slug": "rating",
+    "name": "Rating",
+    "title": "Rating",
+    "value": "Carrier Trust Engine (0–100) with tiers, normalization, and governance.",
+    "summary": "Carrier Trust Engine (0–100) with tiers, normalization, and governance.",
+    "description": "Comprehensive carrier rating system providing a 0-100 trust score with tiered classifications, normalization algorithms, and governance controls.",
+    "howItWorks": "Aggregates performance data to calculate trust scores with intelligent decay and tier-based normalization for fair comparisons.",
+    "security": "Secure rating algorithms with immutable scoring history and dispute resolution workflows.",
+    "capabilities": ["Composite Score", "Intelligent Decay", "Tiers", "Disputes"],
+    "pillars": ["Composite", "Tiers", "Governance"],
+    "roadmap": [
+      "Enhanced scoring algorithms",
+      "Real-time score updates",
+      "Automated dispute resolution"
+    ]
+  },
+  {
+    "slug": "inventory",
+    "name": "Inventory",
+    "title": "Inventory",
+    "value": "Real‑time stock accuracy with forecasting and auditability.",
+    "summary": "Real‑time stock accuracy with forecasting and auditability.",
+    "description": "Advanced inventory management system providing real-time stock accuracy with demand forecasting and comprehensive audit capabilities.",
+    "howItWorks": "Uses IoT sensors and AI forecasting to maintain accurate inventory levels with predictive analytics and audit trails.",
+    "security": "Secure inventory data with encrypted storage and access controls for sensitive stock information.",
+    "capabilities": ["ABC Classes", "Cycle Counts", "Forecasting", "Lot/Serial Traceability"],
+    "pillars": ["ABC", "Forecast", "Audit"],
+    "roadmap": [
+      "IoT sensor integration",
+      "Enhanced forecasting models",
+      "Automated cycle counting"
+    ]
+  },
+  {
+    "slug": "security",
+    "name": "Security",
+    "title": "Security",
+    "value": "Fail‑closed SECaaS with unified policy and forensics‑grade logs.",
+    "summary": "Fail‑closed SECaaS with unified policy and forensics‑grade logs.",
+    "description": "Comprehensive security-as-a-service platform with fail-closed architecture, unified policy management, and forensics-grade audit logging.",
+    "howItWorks": "Implements zero-trust security model with continuous monitoring, threat detection, and automated response capabilities.",
+    "security": "Built-in security controls with fail-closed architecture and comprehensive audit trails for all security events.",
+    "capabilities": ["RBAC", "Tenant Isolation", "Throttling", "ML Threat Detection", "Audit"],
+    "pillars": ["RBAC", "Rate Limits", "Audit"],
+    "roadmap": [
+      "Enhanced threat detection",
+      "Automated response systems",
+      "Advanced analytics"
+    ]
+  },
+  {
+    "slug": "trust",
+    "name": "Trust Pilot",
+    "title": "Trust Pilot",
+    "value": "Public reviews with moderation and reputation analytics.",
+    "summary": "Public reviews with moderation and reputation analytics.",
+    "description": "Public review platform with AI-powered moderation and comprehensive reputation analytics for transparent feedback systems.",
+    "howItWorks": "Collects and moderates public reviews using AI to ensure quality while providing reputation analytics and insights.",
+    "security": "Secure review data with content moderation and privacy controls for user-generated content.",
+    "capabilities": ["Reviews", "AI Moderation", "Discovery", "Insights"],
+    "pillars": ["Reviews", "Moderation", "Insights"],
+    "roadmap": [
+      "Enhanced AI moderation",
+      "Real-time analytics",
+      "Advanced discovery features"
+    ]
+  },
+  {
+    "slug": "warehouse",
+    "name": "Warehouse",
+    "title": "Warehouse",
+    "value": "Door scheduling, capacity management, and safety compliance.",
+    "summary": "Door scheduling, capacity management, and safety compliance.",
+    "description": "Comprehensive warehouse management system providing door scheduling, capacity management, and safety compliance monitoring.",
+    "howItWorks": "Optimizes warehouse operations through intelligent scheduling, capacity planning, and safety protocol enforcement.",
+    "security": "Secure warehouse data with access controls and audit trails for all operational activities.",
+    "capabilities": ["Dock Appointments", "Capacity Planning", "Compliance Metrics"],
+    "pillars": ["Capacity", "Scheduling", "Safety"],
+    "roadmap": [
+      "Automated scheduling",
+      "Enhanced capacity planning",
+      "Real-time safety monitoring"
+    ]
+  },
+  {
+    "slug": "broker",
+    "name": "Broker",
+    "title": "Broker",
+    "value": "Digital brokerage with automated matching and end‑to‑end execution.",
+    "summary": "Digital brokerage with automated matching and end‑to‑end execution.",
+    "description": "Digital brokerage platform providing automated matching and end-to-end execution for freight transactions.",
+    "howItWorks": "Uses AI-powered matching algorithms to connect shippers and carriers with automated execution and tracking.",
+    "security": "Secure brokerage transactions with encrypted communications and verified participant credentials.",
+    "capabilities": ["Matching", "Rate Management", "Execution Tracking", "Compliance"],
+    "pillars": ["Matching", "Execution", "Compliance"],
+    "roadmap": [
+      "Enhanced matching algorithms",
+      "Automated rate management",
+      "Real-time execution tracking"
+    ]
+  }
+]
