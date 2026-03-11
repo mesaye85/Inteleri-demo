@@ -12,29 +12,29 @@ import GlassCard from "./GlassCard";
 
 const features = [
   {
-    title: "Trust & Risk",
-    description: "Zero‑Trust perimeter, tenant isolation, fail‑closed controls, ML threat detection.",
+    title: "Trust by architecture",
+    description: "Tenant isolation, fail-closed controls, explicit policy enforcement, and auditability by default.",
     icon: Shield,
     accent: "from-neon-2/20 via-transparent to-transparent",
-    bullets: ["Zero‑Trust perimeter", "Tenant isolation", "Fail‑closed controls", "ML threat detection"],
+    bullets: ["Tenant isolation", "Fail-closed execution", "Policy enforcement", "Audit-ready trails"],
     href: "/platform#security",
     className: "lg:col-span-1"
   },
   {
-    title: "Complexity",
-    description: "Composable app suite, autonomous agents, selective feature activation.",
+    title: "Operational coherence",
+    description: "Workspaces, apps, and services organized around clear boundaries so the system stays usable as capability grows.",
     icon: LayoutDashboard,
     accent: "from-neon-1/20 via-transparent to-neon-2/20",
-    bullets: ["Composable app suite", "Autonomous agents", "Selective feature activation"],
-    href: "/apps/analytics",
+    bullets: ["Workspace boundaries", "Explicit service surfaces", "Reduced drift", "Easier to reason about"],
+    href: "/platform#workspaces",
     className: "lg:col-span-1"
   },
   {
-    title: "Relevance",
-    description: "Tokenized Service Model (TSM): pay for value, not shelf‑ware.",
+    title: "Measured execution",
+    description: "TSM ties platform activity to governed service execution—automation becomes transparent and controllable.",
     icon: CircuitBoard,
     accent: "from-neon-3/20 via-transparent to-transparent",
-    bullets: ["Pay for value", "Not shelf‑ware", "Tokenized execution"],
+    bullets: ["Tokenized service execution", "Governed automation paths", "Observable workflows", "Accountable utilization"],
     href: "/tsm",
     className: "lg:col-span-1"
   }
@@ -42,7 +42,7 @@ const features = [
 
 export default function BentoGrid() {
   return (
-    <section className="py-20 section-background">
+    <section className="py-16 md:py-20 section-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -52,12 +52,12 @@ export default function BentoGrid() {
           className="text-center mb-16"
         >
 
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="text-text">Three Value </span>
-            <span className="neon-text">Pillars</span>
+          <h2 className="type-section-title mb-6">
+            <span className="text-text">Three platform </span>
+            <span className="neon-text">principles</span>
           </h2>
-          <p className="text-xl text-muted max-w-3xl mx-auto">
-            Security-first design with composable architecture and value-driven execution.
+          <p className="type-section-lead text-muted mx-auto">
+            A control surface built for trust, operational clarity, and governed execution.
           </p>
         </motion.div>
 
@@ -73,7 +73,7 @@ export default function BentoGrid() {
                 viewport={{ once: true }}
                 className={feature.className}
               >
-                <Link href={feature.href}>
+                <Link href={feature.href} className="group block h-full">
                   <GlassCard
                     hover
                     className={cn(
@@ -92,10 +92,10 @@ export default function BentoGrid() {
                         <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.08]">
                           <Icon className="w-6 h-6 text-neon-1" />
                         </div>
-                        <h3 className="text-xl font-semibold text-text">{feature.title}</h3>
+                        <h3 className="type-card-title text-text">{feature.title}</h3>
                       </div>
                     </div>
-                    <p className="text-sm text-muted leading-relaxed">{feature.description}</p>
+                    <p className="type-card-body">{feature.description}</p>
 
                     {feature.bullets && (
                       <ul className="mt-auto space-y-2 text-sm text-muted/90">

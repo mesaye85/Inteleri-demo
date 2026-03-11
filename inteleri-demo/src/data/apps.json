@@ -1,12 +1,13 @@
 [
   {
     "slug": "analytics",
+    "workspace": "risk",
     "name": "Analytics & TPI",
     "title": "Analytics & TPI",
     "value": "Total Performance Intelligence (TPI) across your operations; find and fix hidden gaps.",
     "summary": "Total Performance Intelligence (TPI) across your operations; find and fix hidden gaps.",
-    "description": "Cross-cutting analytics and Total Performance Intelligence (TPI): one view of performance across Carrier, Loadboard, Warehouse, and more. Delivers actionable insights, anomaly detection, and scheduled reports so operations and leadership can act on the same facts.",
-    "howItWorks": "Uses event streaming and analytics to turn operational data into performance metrics, trends, and alerts so you can spot issues and improve outcomes across domains.",
+    "description": "Total Performance Intelligence (TPI) and analytics live in the Risk & Intelligence workspace: events, anomalies, correlation, scheduled reports, and TPI snapshots. One view of performance across Carrier, Broker, and Shipper with actionable insights and anomaly detection.",
+    "howItWorks": "Event streaming and analytics turn operational data into performance metrics, trends, and alerts. TPI snapshots and reporting support Risk & Intelligence and feed domain-specific analytics in Carrier and Broker.",
     "security": "Built with zero-trust architecture, all data is encrypted in transit and at rest with comprehensive audit trails.",
     "capabilities": ["TPI", "Forecasting", "Anomaly Detection", "Correlation", "Scheduled Reports"],
     "pillars": ["TPI", "Forecasting", "Anomaly"],
@@ -18,6 +19,7 @@
   },
   {
     "slug": "loadboard",
+    "workspace": "broker",
     "name": "Loadboard",
     "title": "Loadboard",
     "value": "Faster execution with intelligent matching and structured bidding.",
@@ -35,12 +37,13 @@
   },
   {
     "slug": "carrier",
+    "workspace": "carrier",
     "name": "Carrier",
     "title": "Carrier Operations",
     "value": "Link drivers, vehicles, and commitments to measurable outcomes.",
     "summary": "Link drivers, vehicles, and commitments to measurable outcomes.",
-    "description": "Comprehensive carrier management system that connects drivers, vehicles, and commitments to deliver measurable operational outcomes.",
-    "howItWorks": "Provides real-time telemetry and performance tracking to ensure on-time delivery and safety compliance.",
+    "description": "Carrier Operations connects drivers, vehicles, and commitments to measurable outcomes. Fleet & Operations (loads board, fleet & drivers, scheduling, assignments), Dispatch & Logistics (route planning, delivery schedule, documents, optimization, Dispatch Copilot), Safety & DOT (alerts, HOS, maintenance, FMCSA, anomaly detection), and Finance (invoices, cost estimates, load analytics, payments) in one workspace.",
+    "howItWorks": "Real-time telemetry and performance tracking drive on-time delivery and safety compliance. Loadboard consumption and bids, HOS/ELD sync, trust score and risk signals are integrated per carrier.",
     "security": "Multi-tenant isolation with role-based access control and comprehensive audit logging.",
     "capabilities": ["Telemetry", "On‑time", "Safety", "Exceptions"],
     "pillars": ["Telemetry", "On‑time", "Safety"],
@@ -52,6 +55,7 @@
   },
   {
     "slug": "emissions",
+    "workspace": "carrier",
     "name": "Emissions & Sustainability",
     "title": "Emissions & Sustainability",
     "value": "Trip‑level CO₂ with baselines, targets, and audit‑ready exports.",
@@ -69,12 +73,13 @@
   },
   {
     "slug": "intelligence",
+    "workspace": "risk",
     "name": "Intelligence",
     "title": "Intelligence",
     "value": "Multi‑domain risk scoring + short, decision-ready reports on location risk.",
     "summary": "Multi‑domain risk scoring + short, decision-ready reports on location risk.",
-    "description": "Advanced intelligence platform providing multi-domain risk scoring and short, decision-ready reports on location risk so leadership can act without wading through raw data.",
-    "howItWorks": "Analyzes multiple risk domains to generate comprehensive risk scores and location assessments with actionable recommendations.",
+    "description": "Risk & Intelligence is the cross-cutting workspace: intelligence hub, alerts, anomaly detection, event and security feeds, correlation, location assessment (quick/standard/deep), report generation, playbooks, entities, and ML model registry. TPI snapshots and analytics feed Carrier and Broker.",
+    "howItWorks": "Analyzes multiple risk domains to generate location assessments and decision-ready reports. Events and anomalies flow into playbooks and thresholds; strategic locations and ML models support predictive risk.",
     "security": "Secure risk data processing with encrypted storage and controlled access to sensitive intelligence.",
     "capabilities": ["Risk Domains", "Location Assessments", "Briefs", "Actions"],
     "pillars": ["Risk", "Locations", "Reports"],
@@ -86,6 +91,7 @@
   },
   {
     "slug": "rating",
+    "workspace": "broker",
     "name": "Rating",
     "title": "Rating",
     "value": "Carrier Trust Engine (0–100) with tiers, normalization, and governance.",
@@ -103,6 +109,7 @@
   },
   {
     "slug": "inventory",
+    "workspace": "shipper",
     "name": "Warehouse & Inventory",
     "title": "Warehouse & Inventory",
     "value": "Real‑time stock accuracy with forecasting and auditability.",
@@ -120,6 +127,7 @@
   },
   {
     "slug": "security",
+    "workspace": "admin",
     "name": "Admin & Security",
     "title": "Admin & Security",
     "value": "Security as a Service that fails closed—unified policy and tamper-evident logs.",
@@ -137,6 +145,7 @@
   },
   {
     "slug": "trust-pilot",
+    "workspace": "broker",
     "name": "Trust Pilot",
     "title": "Trust Pilot",
     "value": "Public reviews with moderation and reputation analytics.",
@@ -154,6 +163,7 @@
   },
   {
     "slug": "warehouse",
+    "workspace": "shipper",
     "name": "Warehouse",
     "title": "Warehouse",
     "value": "Door scheduling, capacity management, and safety compliance.",
@@ -170,13 +180,31 @@
     ]
   },
   {
-    "slug": "broker",
+    "slug": "shipper",
+    "workspace": "shipper",
+    "name": "Shipper Control Tower",
+    "title": "Shipper Control Tower",
+    "value": "Supply overview, warehouse and dock, supply chain risk, and load exchange.",
+    "summary": "Supply overview, warehouse and dock, supply chain risk, and load exchange.",
+    "description": "Shipper Control Tower gives you supply chain visibility, warehouse and dock management, supply chain risk signals, compliance and governance, and a load exchange—all in one workspace.",
+    "howItWorks": "Integrates with your ERP and uses intelligence to assess supplier and route risk. Warehouse and dock capacity are managed with entitlement controls; compliance events feed an audit trail.",
+    "security": "Multi-tenant isolation with role-based access; compliance and intelligence data encrypted in transit and at rest.",
+    "capabilities": ["Supply Overview", "Warehouse & Dock", "Supply Chain Risk", "Compliance & Governance", "Load Exchange"],
+    "pillars": ["Supply", "Warehouse", "Risk"],
+    "roadmap": [
+      "Enhanced ERP integrations",
+      "Real-time supply chain risk",
+      "Advanced load exchange matching"
+    ]
+  },
+  {
+    "workspace": "broker",
     "name": "Broker",
     "title": "Broker",
     "value": "Digital brokerage with automated matching and end‑to‑end execution.",
     "summary": "Digital brokerage with automated matching and end‑to‑end execution.",
-    "description": "Digital brokerage platform providing automated matching and end-to-end execution for freight transactions.",
-    "howItWorks": "Uses AI-powered matching algorithms to connect shippers and carriers with automated execution and tracking.",
+    "description": "Broker Desk delivers the full load pipeline: create and manage loads, marketplace and bids, carrier network, route planning and schedule/track, finance (invoices, payments, settlements), risk & compliance (credentials, insurance, claims), and collaboration (documents, threads). Governed by TSM and preflight checks.",
+    "howItWorks": "Load lifecycle is governed (assign carrier, start transit, resolve claim). AI-powered matching and carrier recommendations; route risk and carrier trust scores; predictive load demand and performance analytics.",
     "security": "Secure brokerage transactions with encrypted communications and verified participant credentials.",
     "capabilities": ["Matching", "Rate Management", "Execution Tracking", "Compliance"],
     "pillars": ["Matching", "Execution", "Compliance"],

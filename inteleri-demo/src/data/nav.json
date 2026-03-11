@@ -2,12 +2,12 @@
   "main": [
     { "label": "Home", "href": "/" },
     { "label": "Platform", "href": "/platform" },
+    { "label": "Workspaces", "href": "/platform#workspaces" },
     { "label": "Apps", "href": "/apps" },
     { "label": "TSM", "href": "/tsm" },
-    { "label": "Agents", "href": "/agents" },
-    { "label": "Robotics", "href": "/robotics" },
+    { "label": "AI Control", "href": "/agents" },
     { "label": "Demos", "href": "/demos" },
     { "label": "About", "href": "/about" }
   ],
-  "cta": { "label": "Get a demo", "href": "/#demo" }
+  "cta": { "label": "Request a demo", "href": "/#demo" }
 }

@@ -60,8 +60,8 @@ export function ModalProvider({ children }: { children: React.ReactNode }) {
 
                                     <div className="p-2">
                                         <div className="mb-6 text-center">
-                                            <h2 className="text-2xl font-bold mb-2">Request Access</h2>
-                                            <p className="text-muted">Enter your details to join the Inteleri pilot program.</p>
+                                            <h2 className="text-2xl font-bold mb-2">Request demo access</h2>
+                                            <p className="text-muted">Enter your details to join the Inteleri pilot program. Our team will contact you within one business day to schedule your demo.</p>
                                         </div>
                                         {activeModal === "access" && <AccessForm />}
                                     </div>

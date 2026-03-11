@@ -24,6 +24,7 @@ const iconMap: Record<string, string> = {
   "trust-pilot": "💬",
   warehouse: "🏭",
   broker: "💼",
+  shipper: "🏗️",
 };
 
 export default function AppCard({ slug, title, summary, pillars }: AppCardProps) {

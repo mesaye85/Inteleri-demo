@@ -4,24 +4,20 @@
     "description": "Security‑native platform that unifies apps, agents, and predictive analytics—one place to secure, analyze, and run logistics operations."
   },
   "platform": {
-    "title": "Inteleri Platform — Security by Design, Real-time Insight by Default",
-    "description": "Security runs first and fails closed; real-time data layer for events and insights; fast, role-aware experience."
+    "title": "Inteleri Platform — Security-native, governed operations",
+    "description": "Workspace-centric platform where security runs first and fails closed. Tenant-scoped execution, policy-aware access, operational intelligence, and auditability for governed automation."
   },
   "tsm": {
     "title": "Inteleri TSM — Tokenized, Auditable Capability Delivery",
     "description": "Pay only for value with capability‑based execution and full auditability."
   },
   "agents": {
-    "title": "Inteleri Agents — MCP‑Powered Autonomous Orchestration",
-    "description": "Task, Intelligence, and Integration agents operating inside a Zero‑Trust perimeter."
+    "title": "Inteleri AI Control — Governed automation, bounded execution",
+    "description": "Governed AI-enabled workflows and bounded automation inside security-native controls: policy-aware execution, tenant scoping, fail-closed safeguards, and auditability."
   },
   "apps": {
     "title": "Inteleri Apps — Composable Suite for Modern Logistics",
     "description": "Activate only what you need: Analytics, Loadboard, Emissions, Intelligence, and more."
-  },
-  "robotics": {
-    "title": "Inteleri Robotics — Secure OT Integration",
-    "description": "Identity‑bound robots with standardized tasks/telemetry and strict safety envelopes."
   },
   "demos": {
     "title": "Inteleri Demos — Guided Workflows on Realistic Data",
@@ -30,5 +26,13 @@
   "about": {
     "title": "About Inteleri — Mission, Values, Contact",
     "description": "Security‑first, outcomes‑driven team building the future of logistics intelligence."
+  },
+  "privacy": {
+    "title": "Privacy Policy — Inteleri",
+    "description": "How Inteleri collects, uses, and protects your data. Enterprise privacy and data handling."
+  },
+  "terms": {
+    "title": "Terms of Service — Inteleri",
+    "description": "Terms of use for Inteleri platform and services."
   }
 }

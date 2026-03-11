@@ -2,61 +2,33 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Send, CheckCircle } from "lucide-react";
+import { Mail, Send, CheckCircle } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import GlassCard from "@/components/GlassCard";
 import NeonButton from "@/components/NeonButton";
 
-// ... Keep all data and arrays ...
-const teamMembers = [
-  {
-    name: "Alex Chen",
-    role: "Chief Executive Officer",
-    description: "Former VP of Engineering at major logistics companies with 15+ years in supply chain technology.",
-    avatar: "👨‍💼"
-  },
-  {
-    name: "Sarah Johnson",
-    role: "Chief Technology Officer",
-    description: "Ex-Google engineer specializing in distributed systems and AI/ML for logistics optimization.",
-    avatar: "👩‍💻"
-  },
-  {
-    name: "Michael Rodriguez",
-    role: "Chief Security Officer",
-    description: "Cybersecurity expert with deep experience in enterprise security and compliance frameworks.",
-    avatar: "👨‍🔒"
-  },
-  {
-    name: "Emily Watson",
-    role: "Head of Product",
-    description: "Product leader with extensive experience in B2B SaaS platforms and logistics technology.",
-    avatar: "👩‍💼"
-  }
-];
-
 const values = [
   {
-    title: "Security First",
-    description: "Every decision is made with security and compliance as the foundation, ensuring our customers’ data and operations are always protected.",
+    title: "Security runs first",
+    description: "Security is not an add-on. Identity, policy, and tenant boundaries are part of the platform’s execution model—and the system fails closed by default.",
     icon: "🛡️"
   },
   {
-    title: "Innovation Driven",
-    description: "We continuously push the boundaries of what’s possible in logistics technology, leveraging cutting-edge AI and automation.",
-    icon: "🚀"
+    title: "Workspaces over dashboards",
+    description: "Operations live in workspace context: routes, control surfaces, and services aligned to real domains (carrier, broker, shipper, risk, admin).",
+    icon: "🧭"
   },
   {
-    title: "Customer Success",
-    description: "Our success is measured by our customers’ success. We’re committed to delivering value that drives real business outcomes.",
-    icon: "🎯"
+    title: "Governed execution",
+    description: "Automation is bounded. Actions are policy-aware, observable, and reviewable, with auditability as a first-class requirement.",
+    icon: "✅"
   },
   {
-    title: "Transparency",
-    description: "We believe in open communication, clear pricing, and transparent operations that build trust with our partners.",
-    icon: "🔍"
+    title: "Modular boundaries",
+    description: "A modular app platform with clear service boundaries—so capabilities can be activated deliberately and operated safely.",
+    icon: "🧱"
   }
 ];
 
@@ -95,15 +67,37 @@ export default function AboutPageClient() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            <h1 className="type-display mb-6">
               <span className="text-text">About </span>
               <span className="bg-gradient-to-r from-neon-1 via-neon-3 to-neon-1 bg-clip-text text-transparent">Inteleri</span>
             </h1>
-            <p className="text-xl text-muted max-w-3xl mx-auto mb-6">
-              We’re building the future of logistics intelligence through secure, modular,
-              and intelligent platform solutions that transform how businesses manage their supply chains.
+            <p className="type-section-lead text-muted mx-auto mb-6">
+              Inteleri is being built as a security-native, workspace-centric platform for logistics operations—designed for governed execution, auditability, and operational coherence.
             </p>
             <div className="h-px w-48 mx-auto bg-gradient-to-r from-transparent via-neon-1/60 to-transparent" />
+          </motion.div>
+
+          {/* Why Inteleri exists */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="mb-16"
+          >
+            <GlassCard className="p-8 text-left">
+              <h2 className="type-section-title text-text mb-6">
+                Why Inteleri exists
+              </h2>
+              <div className="prose prose-invert prose-base text-muted max-w-none text-left">
+                <p className="text-lg leading-relaxed mb-6">
+                  Logistics operations are full of decisions that carry real risk: who can access what, what can be executed, what must be reviewed, and what evidence exists after the fact.
+                  Too many systems optimize for convenience and dashboards while leaving security, auditability, and control as afterthoughts.
+                </p>
+                <p className="text-lg leading-relaxed">
+                  Inteleri is built to make operational work governable: workspace context, clear boundaries, policy-aware execution, and visibility into how outcomes were produced.
+                </p>
+              </div>
+            </GlassCard>
           </motion.div>
 
           {/* Mission Section */}
@@ -114,20 +108,15 @@ export default function AboutPageClient() {
             className="mb-16"
           >
             <GlassCard className="p-8 text-left">
-              <h2 className="text-3xl font-bold text-text mb-6">
-                Our Mission
+              <h2 className="type-section-title text-text mb-6">
+                Mission
               </h2>
-              <div className="prose prose-lg text-muted max-w-none text-left">
+              <div className="prose prose-invert prose-base text-muted max-w-none text-left">
                 <p className="text-lg leading-relaxed mb-6">
-                  At Intleri, we believe that logistics intelligence should be secure, modular, and accessible.
-                  Our mission is to democratize advanced logistics capabilities through our platform, enabling
-                  businesses of all sizes to leverage the power of AI, automation, and real-time intelligence
-                  in their supply chain operations.
+                  Build a security-native, workspace-based logistics intelligence platform that supports operational decisions and governed execution—without compromising control, auditability, or tenant boundaries.
                 </p>
                 <p className="text-lg leading-relaxed">
-                  We’re committed to building a platform that not only meets today’s challenges but anticipates
-                  tomorrow’s opportunities, providing our customers with the tools they need to thrive in an
-                  increasingly complex and dynamic global economy.
+                  We focus on operational visibility, decision support, and bounded automation that remains policy-aware and reviewable.
                 </p>
               </div>
             </GlassCard>
@@ -141,7 +130,7 @@ export default function AboutPageClient() {
             className="mb-16"
           >
             <h2 className="text-3xl font-bold text-text mb-8 text-center">
-              Our Values
+              Platform principles
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {values.map((value, index) => (
@@ -167,39 +156,105 @@ export default function AboutPageClient() {
             </div>
           </motion.div>
 
-          {/* Team Section */}
+          {/* Founder Section */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
             className="mb-16"
           >
-            <h2 className="text-3xl font-bold text-text mb-8 text-center">
-              Leadership Team
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {teamMembers.map((member, index) => (
-                <motion.div
-                  key={member.name}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                >
-                  <GlassCard className="h-full text-center p-6 md:p-8">
-                    <div className="text-6xl mb-4">{member.avatar}</div>
-                    <h3 className="text-xl font-semibold text-text mb-2">
-                      {member.name}
-                    </h3>
-                    <p className="text-neon-1 font-medium mb-3">
-                      {member.role}
-                    </p>
-                    <p className="text-muted text-sm leading-relaxed">
-                      {member.description}
-                    </p>
-                  </GlassCard>
-                </motion.div>
-              ))}
-            </div>
+            <GlassCard className="p-8 text-left">
+              <h2 className="text-3xl font-bold text-text mb-6">
+                Founder
+              </h2>
+              <div className="grid grid-cols-1 lg:grid-cols-[1fr,2fr] gap-8 items-start">
+                <div className="text-center lg:text-left">
+                  <div className="text-6xl mb-4">👤</div>
+                  <h3 className="text-2xl font-semibold text-text mb-1">Mesaye Addisu</h3>
+                  <p className="text-neon-1 font-medium">Founder, Inteleri</p>
+                </div>
+                <div className="prose prose-invert prose-base text-muted max-w-none">
+                  <p className="text-lg leading-relaxed mb-4">
+                    Inteleri is founder-led and systems-driven. The platform is being built with a security-first posture and an execution model designed for enterprise operations: tenant-scoped access, policy-aware controls, and auditability for how work is performed.
+                  </p>
+                  <p className="text-lg leading-relaxed">
+                    The focus is not on flashy “AI autonomy,” but on operational control: modular boundaries, governed automation, and observability that supports real teams running real workflows.
+                  </p>
+                </div>
+              </div>
+            </GlassCard>
+          </motion.div>
+
+          {/* What Inteleri is building */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.65 }}
+            className="mb-16"
+          >
+            <GlassCard className="p-8 text-left">
+              <h2 className="text-3xl font-bold text-text mb-6">
+                What Inteleri is building
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-muted">
+                <div className="min-w-0">
+                  <h3 className="text-xl font-semibold text-text mb-3">A workspace operating model</h3>
+                  <p className="leading-relaxed">
+                    Workspaces align interfaces, routes, and services to operational domains—so teams don’t fight a generic UI to do domain-specific work.
+                  </p>
+                </div>
+                <div className="min-w-0">
+                  <h3 className="text-xl font-semibold text-text mb-3">Security-native execution</h3>
+                  <p className="leading-relaxed">
+                    Security runs first. Access is policy-aware, tenant-scoped, and fail-closed—so execution remains bounded even when systems are complex.
+                  </p>
+                </div>
+                <div className="min-w-0">
+                  <h3 className="text-xl font-semibold text-text mb-3">Operational intelligence</h3>
+                  <p className="leading-relaxed">
+                    Event-driven visibility and decision support for exceptions, risk, and performance—grounded in evidence and observability.
+                  </p>
+                </div>
+                <div className="min-w-0">
+                  <h3 className="text-xl font-semibold text-text mb-3">Governed automation (TSM-aligned)</h3>
+                  <p className="leading-relaxed">
+                    Automation executes inside clear boundaries with measurable, auditable service invocation—designed for oversight, not unconstrained “agents.”
+                  </p>
+                </div>
+              </div>
+            </GlassCard>
+          </motion.div>
+
+          {/* Changelog / Open Development */}
+          <motion.div
+            id="changelog"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.7 }}
+            className="mb-16 scroll-mt-24"
+          >
+            <GlassCard className="p-6 md:p-8 text-left">
+              <h2 className="text-3xl font-bold text-text mb-6">
+                Product updates
+              </h2>
+              <p className="text-muted leading-relaxed mb-6">
+                We share product updates and platform notes as the system evolves. For enterprise reviews, we provide architecture overviews and controls documentation on request.
+              </p>
+              <ul className="space-y-2 text-muted">
+                <li className="flex items-start gap-2">
+                  <span className="text-neon-1 mt-1">•</span>
+                  <span>Product releases and workflow updates</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-neon-1 mt-1">•</span>
+                  <span>Security posture notes and controls summaries (on request)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-neon-1 mt-1">•</span>
+                  <span>Integration and API notes (as applicable)</span>
+                </li>
+              </ul>
+            </GlassCard>
           </motion.div>
 
           {/* Contact Section */}
@@ -213,31 +268,19 @@ export default function AboutPageClient() {
               {/* Contact Info */}
               <GlassCard className="p-8">
                 <h2 className="text-3xl font-bold text-text mb-6">
-                  Get in Touch
+                  Contact
                 </h2>
                 <div className="space-y-6">
                   <div className="flex items-start space-x-4">
                     <Mail className="w-6 h-6 text-neon-1 mt-1 flex-shrink-0" />
                     <div>
                       <h3 className="text-lg font-semibold text-text mb-1">Email</h3>
-                      <p className="text-muted">contact@intleri.com</p>
-                      <p className="text-muted">support@intleri.com</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-4">
-                    <Phone className="w-6 h-6 text-neon-2 mt-1 flex-shrink-0" />
-                    <div>
-                      <h3 className="text-lg font-semibold text-text mb-1">Phone</h3>
-                      <p className="text-muted">+1 (555) 123-4567</p>
-                      <p className="text-muted">Sales: +1 (555) 123-4568</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start space-x-4">
-                    <MapPin className="w-6 h-6 text-neon-3 mt-1 flex-shrink-0" />
-                    <div>
-                      <h3 className="text-lg font-semibold text-text mb-1">Office</h3>
-                      <p className="text-muted">123 Innovation Drive</p>
-                      <p className="text-muted">San Francisco, CA 94105</p>
+                      <p className="text-muted">
+                        Use the demo request flow or the official contact email channel.
+                      </p>
+                      <p className="text-muted">
+                        If you don’t have an official contact path yet, treat this as a placeholder for later replacement.
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -246,7 +289,7 @@ export default function AboutPageClient() {
               {/* Contact Form */}
               <GlassCard className="p-8">
                 <h2 className="text-3xl font-bold text-text mb-6">
-                  Send us a Message
+                  Request a conversation
                 </h2>
                 {isSubmitted ? (
                   <motion.div
@@ -259,7 +302,7 @@ export default function AboutPageClient() {
                       Message Sent!
                     </h3>
                     <p className="text-muted">
-                      Thank you for reaching out. We’ll get back to you within 24 hours.
+                      Thank you for reaching out. We’ll follow up as soon as we can.
                     </p>
                   </motion.div>
                 ) : (
@@ -313,7 +356,7 @@ export default function AboutPageClient() {
                       className="w-full"
                     >
                       <Send className="w-4 h-4 mr-2" />
-                      Send Message
+                      Send request
                     </NeonButton>
                   </form>
                 )}
@@ -330,21 +373,20 @@ export default function AboutPageClient() {
           >
             <GlassCard>
               <h2 className="text-3xl font-bold text-text mb-4">
-                Ready to Transform Your Logistics?
+                Explore Inteleri
               </h2>
               <p className="text-xl text-muted mb-8 max-w-2xl mx-auto">
-                Join forward-thinking companies that are already leveraging Intleri’s platform
-                to optimize their supply chain operations.
+                If you want to see how a workspace-centric, security-native platform supports governed workflows, we can walk through realistic scenarios and controls.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <NeonButton variant="default" size="lg">
-                  Start Free Trial
+                  Request a demo
                 </NeonButton>
                 <NeonButton variant="neon" size="lg">
-                  Schedule Demo
+                  Explore the platform
                 </NeonButton>
                 <NeonButton variant="ghost" size="lg">
-                  View Pricing
+                  Contact Inteleri
                 </NeonButton>
               </div>
             </GlassCard>

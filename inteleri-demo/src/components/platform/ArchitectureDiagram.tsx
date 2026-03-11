@@ -4,38 +4,47 @@ import { motion } from "framer-motion";
 import { Shield, Database, Cpu, Layers, Server } from "lucide-react";
 import GlassCard from "../GlassCard";
 
+const layerColorClasses: Record<
+  string,
+  { bg: string; border: string; text: string }
+> = {
+  "neon-1": { bg: "bg-neon-1/20", border: "border-neon-1/30", text: "text-neon-1" },
+  "neon-2": { bg: "bg-neon-2/20", border: "border-neon-2/30", text: "text-neon-2" },
+  "neon-3": { bg: "bg-neon-3/20", border: "border-neon-3/30", text: "text-neon-3" },
+};
+
 const architectureLayers = [
     {
-        name: "Security Layer (SECaaS)",
-        description: "Security as a Service: runs before business logic. Role-based access control (RBAC), tenant isolation, input validation, rate limiting, anomaly detection, and tamper-evident, detailed audit logs.",
+        name: "Security-native control plane",
+        description: "Runs before business logic. Policy-aware access (RBAC), tenant scoping, input controls, rate limits, fail-closed defaults, and tamper-evident audit trails.",
         icon: Shield,
-        technologies: ["RBAC", "Tenant Isolation", "Input Validation", "Rate Limiting", "ML Threat Detection"],
+        technologies: ["RBAC", "Policy Evaluation", "Tenant Scoping", "Fail-Closed", "Auditability"],
         color: "neon-2"
     },
     {
-        name: "Signal Fabric (Data Layer)",
-        description: "Real-time data layer that connects your operations. Event streaming and processing; single, secured source of truth for telemetry, status, KPIs, and model outputs.",
+        name: "Event & intelligence layer",
+        description: "Ingests and correlates operational events to support observability, operational awareness, detection, and governed workflows across workspaces.",
         icon: Database,
-        technologies: ["Event Streaming", "Telemetry", "Status Tracking", "KPI Monitoring", "Model Outputs"],
+        technologies: ["Operational Events", "Correlation", "Detection", "Observability", "Audit Context"],
         color: "neon-1"
     },
     {
-        name: "Application Layer",
-        description: "Modular apps (Analytics, Loadboard, Carrier, Emissions, Intelligence, OES, Rating, Inventory, Security, Trust Pilot, Warehouse, Broker). Clean boundaries; microservice‑ready.",
+        name: "Modular app platform",
+        description: "A suite of modular apps with clear boundaries. Capabilities can be activated by workspace and governed by policy, with measured service execution where it matters.",
         icon: Cpu,
-        technologies: ["Analytics", "Loadboard", "Carrier", "Emissions", "Intelligence"],
+        technologies: ["Apps", "Service Boundaries", "Governed Execution", "Tenant Isolation", "Workspace Routing"],
         color: "neon-3"
     },
     {
-        name: "Experience Layer (Next.js/React)",
-        description: "Fast, role-aware UI with real-time feedback. High‑performance, motion‑assisted interface (custom neon/glass design) that adapts to your role.",
+        name: "Workspace experience layer",
+        description: "Role-aware, workspace-centric experiences that expose the right controls, workflows, and evidence for how work is executed.",
         icon: Layers,
-        technologies: ["Next.js", "React", "Motion UI", "Progressive Disclosure", "Command Palette"],
+        technologies: ["Role-Aware UX", "Control Surfaces", "Progressive Disclosure", "Workflow Guardrails", "Evidence Links"],
         color: "neon-1"
     },
     {
         name: "Operations Layer",
-        description: "Observability, SLOs, alerting, change audit, feature flags, controlled rollouts.",
+        description: "Operational intelligence and observability: logs, traces, metrics, SLOs, alerting, change history, and controlled rollouts.",
         icon: Server,
         technologies: ["Observability", "SLOs", "Alerting", "Change Audit", "Feature Flags"],
         color: "neon-2"
@@ -45,12 +54,13 @@ const architectureLayers = [
 export default function ArchitectureDiagram() {
     return (
         <GlassCard className="p-8">
-            <h2 className="text-3xl font-bold text-text mb-8 text-center">
+            <h2 className="type-section-title text-text mb-8 text-center">
                 System Architecture
             </h2>
             <div className="space-y-4">
                 {architectureLayers.map((layer, index) => {
                     const Icon = layer.icon;
+                    const colors = layerColorClasses[layer.color] ?? layerColorClasses["neon-1"];
                     return (
                         <motion.div
                             key={layer.name}
@@ -63,14 +73,14 @@ export default function ArchitectureDiagram() {
                                 hover
                                 className="flex items-center space-x-6 p-4 border-white/10"
                             >
-                                <div className={`w-12 h-12 bg-${layer.color}/20 rounded-lg flex items-center justify-center flex-shrink-0`}>
-                                    <Icon className={`w-6 h-6 text-${layer.color}`} />
+                                <div className={`w-12 h-12 ${colors.bg} rounded-lg flex items-center justify-center flex-shrink-0 ${colors.border} border`}>
+                                    <Icon className={`w-6 h-6 ${colors.text}`} />
                                 </div>
                                 <div className="flex-1 min-w-0">
-                                    <h3 className="text-xl font-semibold text-text mb-1 truncate">
+                                    <h3 className="type-card-title text-text mb-1 truncate">
                                         {layer.name}
                                     </h3>
-                                    <p className="text-muted mb-2 text-sm leading-relaxed">{layer.description}</p>
+                                    <p className="type-card-body mb-2">{layer.description}</p>
                                     <div className="flex flex-wrap gap-2">
                                         {layer.technologies.map((tech) => (
                                             <span

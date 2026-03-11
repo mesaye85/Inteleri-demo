@@ -1,9 +1,9 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Intleri - Secure, Modular Logistics Intelligence",
-  description: "Learn about Intleri's mission to democratize advanced logistics capabilities through secure, modular platform solutions that transform supply chain operations.",
-  keywords: "about intleri, logistics technology company, supply chain innovation, team leadership",
+  title: "About Inteleri — Security-native, workspace-centric logistics intelligence",
+  description: "Founder-led overview of Inteleri: a security-native, workspace-based platform for governed execution, operational visibility, and auditability in logistics operations.",
+  keywords: "about inteleri, logistics intelligence, security-native platform, workspaces, governed execution, auditability",
 };
 
 export default function AboutLayout({

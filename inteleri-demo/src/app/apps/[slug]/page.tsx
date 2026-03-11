@@ -10,6 +10,7 @@ import Footer from "@/components/Footer";
 import GlassCard from "@/components/GlassCard";
 import NeonButton from "@/components/NeonButton";
 import appsData from "@/data/apps.json";
+import workspacesData from "@/data/workspaces.json";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { useModal } from "@/components/ModalContext";
 
@@ -31,13 +32,17 @@ const iconMap: Record<string, string> = {
   "trust-pilot": "💬",
   warehouse: "🏭",
   broker: "💼",
+  shipper: "🏗️",
 };
 
 export default function AppPage({ params }: AppPageProps) {
   // Use React.use() to unwrap the params Promise in Next.js 15
   const { slug } = use(params);
   const { openModal } = useModal();
-  const app = appsData.find((a) => a.slug === slug);
+  const app = appsData.find((a) => a.slug === slug) as (typeof appsData)[number] & { workspace?: string } | undefined;
+  const workspace = app?.workspace
+    ? workspacesData.find((w) => w.id === app.workspace)
+    : null;
 
   if (!app) {
     return (
@@ -73,10 +78,10 @@ export default function AppPage({ params }: AppPageProps) {
             className="text-center mb-12"
           >
             <div className="text-6xl mb-4">{iconMap[app.slug] || "📱"}</div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            <h1 className="type-display mb-4">
               <span className="bg-gradient-to-r from-neon-1 via-neon-3 to-neon-1 bg-clip-text text-transparent">{app.title}</span>
             </h1>
-            <p className="text-xl text-muted mb-6">{app.summary}</p>
+            <p className="type-section-lead text-muted mb-6">{app.summary}</p>
             <div className="h-px w-40 mx-auto bg-gradient-to-r from-transparent via-neon-1/60 to-transparent mb-6" />
             <div className="flex flex-wrap justify-center gap-2">
               {app.pillars.map((pillar) => (
@@ -89,6 +94,18 @@ export default function AppPage({ params }: AppPageProps) {
                 </Badge>
               ))}
             </div>
+            {workspace && (
+              <p className="text-sm text-muted mt-4">
+                Part of{" "}
+                <Link
+                  href={`/platform#${workspace.anchor}`}
+                  className="text-neon-1 hover:underline"
+                >
+                  {workspace.label}
+                </Link>{" "}
+                workspace
+              </p>
+            )}
           </motion.div>
 
           {/* Content Sections */}
@@ -100,10 +117,10 @@ export default function AppPage({ params }: AppPageProps) {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <GlassCard className="p-6 md:p-8 text-left">
-                <h2 className="text-2xl font-semibold text-text mb-4">
+                <h2 className="type-section-title text-text mb-4">
                   Executive Summary
                 </h2>
-                <p className="text-muted leading-relaxed">{app.description}</p>
+                <p className="type-section-lead text-muted max-w-none">{app.description}</p>
               </GlassCard>
             </motion.div>
 
@@ -114,14 +131,14 @@ export default function AppPage({ params }: AppPageProps) {
               transition={{ duration: 0.8, delay: 0.3 }}
             >
               <GlassCard className="p-6 md:p-8 text-left">
-                <h2 className="text-2xl font-semibold text-text mb-4">
+                <h2 className="type-section-title text-text mb-4">
                   Core Capabilities
                 </h2>
                 <ul className="space-y-3">
                   {app.capabilities.map((capability, index) => (
                     <li key={index} className="flex items-start space-x-3 min-w-0">
                       <div className="w-2 h-2 bg-neon-1 rounded-full mt-2 flex-shrink-0" />
-                      <span className="text-muted min-w-0 break-words">{capability}</span>
+                      <span className="type-card-body min-w-0 break-words">{capability}</span>
                     </li>
                   ))}
                 </ul>
@@ -135,10 +152,10 @@ export default function AppPage({ params }: AppPageProps) {
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               <GlassCard className="p-6 md:p-8 text-left">
-                <h2 className="text-2xl font-semibold text-text mb-4">
+                <h2 className="type-section-title text-text mb-4">
                   How it Works
                 </h2>
-                <p className="text-muted leading-relaxed">{app.howItWorks}</p>
+                <p className="type-section-lead text-muted max-w-none">{app.howItWorks}</p>
               </GlassCard>
             </motion.div>
 
@@ -149,10 +166,10 @@ export default function AppPage({ params }: AppPageProps) {
               transition={{ duration: 0.8, delay: 0.5 }}
             >
               <GlassCard className="p-6 md:p-8 text-left">
-                <h2 className="text-2xl font-semibold text-text mb-4">
+                <h2 className="type-section-title text-text mb-4">
                   Security & Compliance
                 </h2>
-                <p className="text-muted leading-relaxed">{app.security}</p>
+                <p className="type-section-lead text-muted max-w-none">{app.security}</p>
               </GlassCard>
             </motion.div>
 
@@ -163,14 +180,14 @@ export default function AppPage({ params }: AppPageProps) {
               transition={{ duration: 0.8, delay: 0.6 }}
             >
               <GlassCard className="p-6 md:p-8 text-left">
-                <h2 className="text-2xl font-semibold text-text mb-4">
+                <h2 className="type-section-title text-text mb-4">
                   Roadmap
                 </h2>
                 <ul className="space-y-3">
                   {app.roadmap.map((item, index) => (
                     <li key={index} className="flex items-start space-x-3 min-w-0">
                       <div className="w-2 h-2 bg-neon-2 rounded-full mt-2 flex-shrink-0" />
-                      <span className="text-muted min-w-0 break-words">{item}</span>
+                      <span className="type-card-body min-w-0 break-words">{item}</span>
                     </li>
                   ))}
                 </ul>

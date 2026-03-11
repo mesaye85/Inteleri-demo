@@ -23,6 +23,8 @@ export default function NavBar() {
   const menuId = useId();
   const { openModal } = useModal();
 
+  const closeMobileMenu = () => setIsMobileMenuOpen(false);
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -58,11 +60,11 @@ export default function NavBar() {
         }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-16 gap-4">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
+          <Link href="/" className="flex items-center space-x-2 shrink-0">
             <motion.div
-              whileHover={{ scale: 1.1 }}
+              whileHover={{ scale: 1.05 }}
               className="text-2xl font-bold neon-text drop-shadow-[0_0_12px_rgba(99,230,255,0.35)]"
             >
               Inteleri
@@ -70,7 +72,8 @@ export default function NavBar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex flex-1 items-center justify-center min-w-0">
+            <div className="flex items-center gap-5 lg:gap-7 text-sm lg:text-[15px] whitespace-nowrap">
             {navigation.map((item) => {
               const active = isActivePath(item.href, pathname ?? "");
               return (
@@ -85,10 +88,11 @@ export default function NavBar() {
                 </Link>
               );
             })}
+            </div>
           </div>
 
           {/* CTA Button */}
-          <div className="hidden md:flex">
+          <div className="hidden md:flex shrink-0">
             <NeonButton variant="neon" size="sm" onClick={() => openModal("access")}>
               {navData.cta.label}
             </NeonButton>
@@ -99,7 +103,7 @@ export default function NavBar() {
             <button
               type="button"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-text hover:text-neon-1 transition-colors rounded outline-none focus-visible:ring-2 focus-visible:ring-neon-1 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)]"
+              className="inline-flex items-center justify-center h-10 w-10 text-text hover:text-neon-1 transition-colors rounded-lg outline-none focus-visible:ring-2 focus-visible:ring-neon-1 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)]"
               aria-expanded={isMobileMenuOpen}
               aria-controls={menuId}
               aria-label={isMobileMenuOpen ? "Close navigation" : "Open navigation"}
@@ -119,9 +123,9 @@ export default function NavBar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             id={menuId}
-            className="md:hidden glass rounded-lg mt-2 p-4"
+            className="md:hidden glass rounded-2xl mt-2 p-2 sm:p-3 max-h-[calc(100vh-5rem)] overflow-auto"
           >
-            <div className="flex flex-col space-y-4">
+            <div className="flex flex-col gap-1">
               {navigation.map((item) => {
                 const active = isActivePath(item.href, pathname ?? "");
                 return (
@@ -129,16 +133,18 @@ export default function NavBar() {
                     key={item.label}
                     href={item.href}
                     aria-current={active ? "page" : undefined}
-                    className={`transition-colors rounded outline-none focus-visible:ring-2 focus-visible:ring-neon-1 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)] ${active ? "text-neon-1 font-medium" : "text-text hover:text-neon-1"}`}
-                    onClick={() => setIsMobileMenuOpen(false)}
+                    className={`px-3 py-2 rounded-xl transition-colors outline-none focus-visible:ring-2 focus-visible:ring-neon-1 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)] ${active ? "text-neon-1 font-medium bg-white/[0.04]" : "text-text hover:text-neon-1 hover:bg-white/[0.03]"}`}
+                    onClick={closeMobileMenu}
                   >
                     {item.label}
                   </Link>
                 );
               })}
-              <NeonButton variant="neon" className="w-full" onClick={() => { setIsMobileMenuOpen(false); openModal("access"); }}>
+              <div className="pt-2">
+                <NeonButton variant="neon" className="w-full" onClick={() => { closeMobileMenu(); openModal("access"); }}>
                 {navData.cta.label}
-              </NeonButton>
+                </NeonButton>
+              </div>
             </div>
           </motion.div>
         )}

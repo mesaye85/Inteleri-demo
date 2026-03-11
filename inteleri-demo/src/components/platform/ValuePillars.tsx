@@ -6,18 +6,18 @@ import GlassCard from "../GlassCard";
 
 const platformFeatures = [
     {
-        title: "Trust & Risk",
-        description: "Zero‑Trust perimeter, tenant isolation, fail‑closed controls, ML threat detection.",
+        title: "Security-native foundation",
+        description: "Security runs first: tenant scoping, policy-aware access, fail-closed defaults, and auditability across actions and data.",
         icon: Shield
     },
     {
-        title: "Complexity",
-        description: "Composable app suite, autonomous agents, selective feature activation.",
+        title: "Governed execution",
+        description: "Modular apps and bounded automation. Execution is explicit, policy-checked, and observable—designed for oversight, not autonomy theater.",
         icon: BarChart3
     },
     {
-        title: "Relevance",
-        description: "Tokenized Service Model (TSM): pay for value, not shelf‑ware.",
+        title: "Operational intelligence",
+        description: "Event-driven awareness, anomaly detection, and decision support—paired with clear service boundaries and measurable execution (TSM).",
         icon: Server
     }
 ];
@@ -26,7 +26,7 @@ export default function ValuePillars() {
     return (
         <>
             <h2 className="text-3xl font-bold text-text mb-8 text-center">
-                Three Value Pillars
+                Platform principles
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {platformFeatures.map((feature, index) => {

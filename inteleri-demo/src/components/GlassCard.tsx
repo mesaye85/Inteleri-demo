@@ -41,9 +41,9 @@ export default function GlassCard({ children, className = "", hover = true }: Gl
         "relative overflow-hidden rounded-3xl border border-white/[0.08] bg-[var(--panel)]",
         "backdrop-blur-2xl backdrop-saturate-150",
         "shadow-[0_0_0_1px_rgba(255,255,255,0.02),0_4px_16px_-4px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.05)]",
-        "transition-all duration-500 cubic-bezier(0.2, 0.8, 0.2, 1)",
-        "hover:border-white/[0.12] hover:shadow-[0_0_0_1px_rgba(255,255,255,0.05),0_12px_32px_-8px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.1)]",
-        hover && "group hover:-translate-y-1 hover:shadow-cyan-500/10",
+        "transition-all duration-300 cubic-bezier(0.2, 0.8, 0.2, 1)",
+        "hover:border-white/[0.12] hover:shadow-[0_0_0_1px_rgba(255,255,255,0.05),0_8px_24px_-10px_rgba(0,0,0,0.45),inset_0_1px_0_rgba(255,255,255,0.1)]",
+        hover && "group hover:-translate-y-0.5 hover:shadow-cyan-500/5",
         className
       )}
     >

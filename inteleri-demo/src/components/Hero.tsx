@@ -39,36 +39,39 @@ export default function Hero() {
             className="relative"
           >
             <div className="inline-flex items-center gap-2 rounded-full glass border border-white/10 px-4 py-2 text-sm text-muted">
-              <Sparkles className="w-4 h-4 text-neon-1 animate-pulse" />
-              <span className="text-text/80">Introducing Inteleri Neon Control Surface</span>
+              <Sparkles className="w-4 h-4 text-neon-1" />
+              <span className="text-text/80">Security-first control surface for operations</span>
             </div>
 
-            <h1 className="mt-8 text-5xl md:text-7xl font-semibold leading-tight tracking-tight">
+            <h1 className="mt-8 type-display">
               <motion.span
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.1 }}
                 className="block text-text"
               >
-                Zero‑Trust
+                Inteleri
               </motion.span>
               <motion.span
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
-                className="block bg-gradient-to-r from-neon-1 via-neon-2 to-neon-3 bg-clip-text text-transparent animate-pulse"
+                className="block bg-gradient-to-r from-neon-1 via-neon-2 to-neon-3 bg-clip-text text-transparent"
               >
-                Logistics Intelligence.
+                Security-native logistics intelligence
               </motion.span>
             </h1>
 
-            <p className="mt-6 text-lg md:text-xl text-muted leading-relaxed max-w-xl">
-              One platform to secure, analyze, and run your logistics operations. Connect your ecosystem—from forecast to fleet—with predictive decisions and <span className="text-neon-1 font-medium">composable</span> automations.
+            <p className="mt-6 type-section-lead text-muted">
+              One platform to operate, secure, and scale modern logistics workflows.
+            </p>
+            <p className="mt-4 type-section-lead text-muted">
+              Inteleri unifies operational workspaces, governed automation, and tokenized service execution into a single control surface. From carrier and loadboard operations to risk, intelligence, and platform oversight, every action is policy-aware, observable, and tenant-safe.
             </p>
 
             <div className="mt-10 flex flex-col sm:flex-row gap-4 sm:items-center">
               <NeonButton variant="neon" size="lg" className="px-8 py-3" onClick={() => openModal("access")}>
-                Get a demo
+                Request a demo
               </NeonButton>
               <Link href="/platform">
                 <NeonButton variant="default" size="lg" className="px-8 py-3">
@@ -76,27 +79,29 @@ export default function Hero() {
                 </NeonButton>
               </Link>
               <a
-                href="#demo"
+                href="/platform#security"
                 className="text-sm text-neon-1 hover:text-neon-2 transition-colors inline-flex items-center gap-1 mt-2 sm:mt-0 rounded outline-none focus-visible:ring-2 focus-visible:ring-neon-1 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)]"
               >
-                See a 60‑second tour →
+                Trust &amp; security
+              </a>
+            </div>
+            <div className="mt-4 flex flex-wrap items-center gap-x-6 gap-y-1 text-sm text-muted">
+              <a
+                href="#demo"
+                className="hover:text-neon-1 transition-colors rounded outline-none focus-visible:ring-2 focus-visible:ring-neon-1 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)]"
+              >
+                See a 60‑second tour
               </a>
               <a
                 href="#request-access"
-                className="text-sm text-neon-1 hover:text-neon-2 transition-colors inline-flex items-center gap-1 mt-2 sm:mt-0 rounded outline-none focus-visible:ring-2 focus-visible:ring-neon-1 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)]"
+                className="hover:text-neon-1 transition-colors rounded outline-none focus-visible:ring-2 focus-visible:ring-neon-1 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)]"
               >
-                Request Access
+                Request access
               </a>
             </div>
-
-            <div className="mt-6">
-              <a
-                href="/platform#security"
-                className="text-sm text-neon-1 hover:text-neon-2 transition-colors inline-flex items-center gap-1 rounded outline-none focus-visible:ring-2 focus-visible:ring-neon-1 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)]"
-              >
-                Security model →
-              </a>
-            </div>
+            <p className="mt-4 text-sm text-muted">
+              Security-first. Multi-tenant. Fail-closed. Built for real operational control.
+            </p>
 
             <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4">
               {heroData.map((item) => {
@@ -133,11 +138,11 @@ export default function Hero() {
                 <div className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-neon-1/60 to-transparent" />
                 <div className="flex items-start justify-between">
                   <div>
-                    <p className="text-xs uppercase tracking-widest text-muted">Network pulse</p>
+                    <p className="type-kicker">Control surface</p>
                     <p className="mt-3 text-4xl font-semibold text-text">
-                      <CountUp value={218} suffix=" routes" />
+                      <CountUp value={5} suffix=" workspaces" />
                     </p>
-                    <p className="mt-1 text-sm text-muted">Synced across 12 data planes</p>
+                    <p className="mt-1 text-sm text-muted">Bounded execution, observable activity</p>
                   </div>
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-neon-1/10 border border-neon-1/30">
                     <Radar className="w-5 h-5 text-neon-1" />
@@ -147,39 +152,38 @@ export default function Hero() {
                 <div className="mt-8 space-y-4">
                   <div className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3">
                     <div>
-                      <p className="text-xs uppercase tracking-widest text-muted">Carrier ETA</p>
+                      <p className="type-kicker">Multi-tenant</p>
                       <p className="text-lg font-semibold text-text">
-                        <CountUp value={98.2} suffix="%" decimals={1} prefix="" /> on time
+                        Tenant-safe boundaries
                       </p>
                     </div>
-                    <div className="flex items-center gap-1 text-xs text-emerald-300">
+                    <div className="flex items-center gap-1 text-xs text-muted">
                       <ArrowUpRight className="h-4 w-4" />
-                      <span>+4.3%</span>
+                      <span>Policy-enforced</span>
                     </div>
                   </div>
 
                   <div className="grid grid-cols-2 gap-3 text-sm text-muted">
                     <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-3">
-                      <p className="text-xs uppercase tracking-widest text-muted/80">Risk alerts</p>
+                      <p className="type-kicker text-muted/80">Fail-closed</p>
                       <p className="mt-2 text-2xl font-semibold text-text">
-                        <CountUp value={12} />
+                        Deny by default
                       </p>
-                      <p className="text-xs text-emerald-300 mt-1">-18% WoW</p>
+                      <p className="text-xs text-muted mt-1">Audit-ready trails</p>
                     </div>
                     <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-3">
-                      <p className="text-xs uppercase tracking-widest text-muted/80">CO₂ intensity</p>
+                      <p className="type-kicker text-muted/80">TSM</p>
                       <p className="mt-2 text-2xl font-semibold text-text">
-                        <CountUp value={0.82} decimals={2} />
+                        Tokenized execution
                       </p>
-                      <p className="text-xs text-sky-300 mt-1">kg / mi avg.</p>
+                      <p className="text-xs text-muted mt-1">Measured service activity</p>
                     </div>
                   </div>
 
                   <div className="rounded-2xl border border-white/10 bg-gradient-to-r from-neon-1/10 via-transparent to-neon-2/10 px-4 py-4">
-                    <p className="text-xs uppercase tracking-widest text-muted">Scenario engine</p>
+                    <p className="type-kicker">Built for controlled execution</p>
                     <p className="mt-2 text-sm text-text/90 leading-relaxed">
-                      Snapshot future-state loads, pricing and risk scores before deploying
-                      into production.
+                      Workspace-based operational control, policy-aware orchestration, and AI capability behind governed boundaries.
                     </p>
                   </div>
                 </div>
@@ -201,22 +205,22 @@ export default function Hero() {
                     <Workflow className="w-5 h-5 text-neon-1" />
                   </div>
                   <div>
-                    <p className="text-xs uppercase tracking-widest text-muted">TSM runbook compiled</p>
-                    <p className="text-lg font-semibold text-text">8 services orchestrated</p>
+                    <p className="type-kicker">Execution stays bounded</p>
+                    <p className="text-lg font-semibold text-text">Governed automation</p>
                   </div>
                 </div>
                 <ul className="mt-4 space-y-2 text-xs text-muted">
                   <li className="flex items-center gap-2">
                     <span className="h-1.5 w-1.5 rounded-full bg-neon-1" />
-                    8 services orchestrated
+                    Workspace-based operational control
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="h-1.5 w-1.5 rounded-full bg-neon-2" />
-                    Robotics co‑pilot engaged
+                    Policy-aware workflow orchestration
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="h-1.5 w-1.5 rounded-full bg-neon-3" />
-                    SOC 2 controls mapped
+                    Audit-ready activity trails
                   </li>
                 </ul>
               </GlassCard>

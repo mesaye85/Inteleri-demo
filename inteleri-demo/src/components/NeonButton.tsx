@@ -18,19 +18,19 @@ export default function NeonButton({
   className = "",
   ...props
 }: NeonButtonProps) {
-  const baseClasses = "relative overflow-hidden transition-all duration-300 outline-none focus-visible:ring-2 focus-visible:ring-neon-1 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)]";
+  const baseClasses = "group relative overflow-hidden transition-all duration-200 outline-none focus-visible:ring-2 focus-visible:ring-neon-1 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)]";
 
   const variantClasses = {
-    default: "bg-gradient-to-r from-neon-1 to-neon-2 text-bg hover:from-neon-2 hover:to-neon-3 shadow-[0_0_20px_rgba(99,230,255,0.3)] hover:shadow-[0_0_32px_rgba(99,230,255,0.5)]",
-    neon: "bg-transparent border border-neon-1/50 text-neon-1 hover:bg-gradient-to-r hover:from-neon-1 hover:to-neon-2 hover:text-bg hover:border-transparent shadow-[0_0_16px_rgba(99,230,255,0.2)] hover:shadow-[0_0_32px_rgba(99,230,255,0.4)] backdrop-blur-sm",
+    default: "bg-gradient-to-r from-neon-1 to-neon-2 text-bg hover:from-neon-2 hover:to-neon-3 shadow-[0_0_14px_rgba(99,230,255,0.22)] hover:shadow-[0_0_20px_rgba(99,230,255,0.3)]",
+    neon: "bg-transparent border border-neon-1/45 text-neon-1 hover:bg-gradient-to-r hover:from-neon-1 hover:to-neon-2 hover:text-bg hover:border-transparent shadow-[0_0_12px_rgba(99,230,255,0.16)] hover:shadow-[0_0_18px_rgba(99,230,255,0.24)] backdrop-blur-sm",
     ghost: "bg-transparent text-text hover:bg-white/10 hover:text-neon-1"
   };
 
   return (
     <motion.div
-      whileHover={{ scale: 1.02 }}
-      whileTap={{ scale: 0.98 }}
-      transition={{ type: "spring", stiffness: 400, damping: 17 }}
+      whileHover={{ scale: 1.01 }}
+      whileTap={{ scale: 0.99 }}
+      transition={{ type: "spring", stiffness: 330, damping: 22 }}
     >
       <Button
         size={size}
@@ -38,7 +38,7 @@ export default function NeonButton({
         {...props}
       >
         {/* Shimmer effect */}
-        <div className="absolute inset-0 -translate-x-full group-hover:animate-[shimmer_2s_infinite] bg-gradient-to-r from-transparent via-white/10 to-transparent z-0" />
+        <div className="absolute inset-0 -translate-x-full group-hover:animate-[shimmer_2.8s_infinite] bg-gradient-to-r from-transparent via-white/10 to-transparent z-0" />
 
         <span className="relative z-10">{children}</span>
         {/* Subtle inner glow effect for neon variant */}

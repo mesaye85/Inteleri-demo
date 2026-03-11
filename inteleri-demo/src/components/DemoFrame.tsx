@@ -74,9 +74,9 @@ const DEFAULT_ITEMS: DemoItem[] = [
     icon: <Bot className="h-5 w-5" aria-hidden />,
     title: 'Runbook compiled',
     lines: [
-      '8 services orchestrated',
-      'Robotics co‑pilot engaged',
-      'SOC 2 controls mapped'
+      'Tokenized service metering',
+      'Policy-aware orchestration',
+      'Audit-ready activity trail'
     ]
   }
 ]

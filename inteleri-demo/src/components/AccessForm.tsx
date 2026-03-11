@@ -84,7 +84,7 @@ export const AccessForm = React.memo(function AccessForm() {
         </div>
         <h3 className="text-xl font-semibold text-white mb-2">Access Request Submitted</h3>
         <p className="text-white/80 mb-6">
-          We&apos;ll review your request and get back to you within 24 hours.
+          Our team will contact you within one business day to schedule your demo. Check your inbox for next steps.
         </p>
         <button
           onClick={() => {
@@ -171,7 +171,7 @@ export const AccessForm = React.memo(function AccessForm() {
 
         <div>
           <label htmlFor="modules" className="block text-sm font-medium text-white mb-2">
-            Modules of Interest
+            Areas of interest
           </label>
           <textarea
             id="modules"
@@ -180,7 +180,7 @@ export const AccessForm = React.memo(function AccessForm() {
             onChange={handleInputChange}
             rows={3}
             className="w-full px-4 py-3 rounded-xl bg-white/[0.05] border border-white/10 text-white placeholder-white/50 outline-none focus-visible:ring-2 focus-visible:ring-neon-1 focus-visible:border-transparent resize-none"
-            placeholder="Analytics, Loadboard, Emissions, Intelligence, TSM, Agents..."
+            placeholder="Carrier Operations, Broker Desk, Shipper Control Tower, Risk & Intelligence, Admin & Security, TSM, AI Control..."
           />
         </div>
 
@@ -232,7 +232,7 @@ export const AccessForm = React.memo(function AccessForm() {
               Submitting Request...
             </>
           ) : (
-            'Request Access'
+            'Request demo access'
           )}
         </button>
       </form>

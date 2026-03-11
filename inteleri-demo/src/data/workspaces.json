@@ -1,0 +1,67 @@
+[
+  {
+    "id": "carrier",
+    "label": "Carrier Operations",
+    "description": "Day-to-day carrier operations across dispatch, fleet, safety, and billing—built for controlled execution and auditability.",
+    "routeGroups": [
+      { "name": "Fleet & Operations", "routes": ["Loads Board", "Fleet & Drivers", "Scheduling", "Assignments", "Saved Loads"] },
+      { "name": "Dispatch & Logistics", "routes": ["Route Planning", "Delivery Schedule", "Shipping Documents", "Fleet Optimization", "Dispatch Copilot"] },
+      { "name": "Safety & DOT", "routes": ["Safety Alerts", "Driver Compliance", "HOS Log", "Maintenance & DVIR", "FMCSA Status", "Anomaly Detection", "Safety Correlation"] },
+      { "name": "Finance", "routes": ["Invoices & Billing", "Cost Estimates", "Load Analytics", "Payment Tracking"] },
+      { "name": "Partners & Integrations", "routes": ["Reputation & Trust", "Customer Management", "ELD Providers", "ERP & Load Boards"] }
+    ],
+    "keyServices": ["Fleet and driver management", "Loadboard consumption and bids", "HOS/ELD sync", "Safety and FMCSA workflows", "Invoices and cost estimates", "Trust and risk signals"],
+    "slug": "carrier",
+    "anchor": "carrier"
+  },
+  {
+    "id": "broker",
+    "label": "Broker Desk",
+    "description": "Broker workflows from load creation through execution and settlement—matching, bids, collaboration, and exception handling with clear controls.",
+    "routeGroups": [
+      { "name": "Pipeline", "routes": ["Load Pipeline", "Create Load", "My Loads"] },
+      { "name": "Marketplace & Matching", "routes": ["Marketplace", "Carrier Network", "Bid Manager", "Saved Loads"] },
+      { "name": "Logistics", "routes": ["Route Planning", "Schedule & Track", "Load Optimization"] },
+      { "name": "Finance & Analytics", "routes": ["Margin & Revenue", "Performance Analytics", "Load Analytics"] },
+      { "name": "Risk & Compliance", "routes": ["Risk & Security", "Intelligence", "Compliance & Insurance", "Disputes & Claims"] }
+    ],
+    "keyServices": ["Load lifecycle and execution state", "Marketplace and bids", "Carrier network and matching support", "Invoices, payments, settlements", "Claims and collaboration", "Route risk and carrier trust signals"],
+    "slug": "broker",
+    "anchor": "broker"
+  },
+  {
+    "id": "shipper",
+    "label": "Shipper Control Tower",
+    "description": "A shipper operating view across supply, warehouse/dock activity, compliance evidence, and exceptions—optimized for visibility and control.",
+    "routeGroups": [
+      { "name": "Supply", "routes": ["Supply Overview", "Warehouse & Dock", "Supply Chain Risk", "Compliance & Governance", "Load Exchange"] }
+    ],
+    "keyServices": ["Supply chain visibility", "Warehouse and dock workflows", "Supplier and lane risk signals", "ERP integration", "Compliance evidence and audit trail", "Load exchange"],
+    "slug": "shipper",
+    "anchor": "shipper"
+  },
+  {
+    "id": "risk",
+    "label": "Risk & Intelligence",
+    "description": "Cross-workspace operational intelligence: events, alerts, correlation, anomaly detection, assessments, and playbooks—focused on awareness and governed response.",
+    "routeGroups": [
+      { "name": "Intelligence", "routes": ["Risk Overview", "Intelligence Hub", "Alerts", "Anomaly Detection", "Event Feed", "Security Feed", "Correlation"] },
+      { "name": "Assess & Report", "routes": ["Assess Situation", "Intelligence Report", "Playbooks", "Entities", "Model Registry"] }
+    ],
+    "keyServices": ["Location and context assessment", "Events, correlation, and anomaly detection", "Reports and playbooks", "Performance snapshots and analytics", "Model registry and controlled evaluation"],
+    "slug": "risk",
+    "anchor": "risk"
+  },
+  {
+    "id": "admin",
+    "label": "Admin & Security",
+    "description": "Identity, access, policy, and platform controls—users/roles, API keys, integrations, audit logs, and governed execution settings (including TSM).",
+    "routeGroups": [
+      { "name": "Identity & Access", "routes": ["Users & Roles", "PDP Policies", "RBAC & Permissions", "API Keys"] },
+      { "name": "Platform", "routes": ["Agents & TSM", "Security Center", "Integrations & Devices", "Audit Logs", "Billing"] }
+    ],
+    "keyServices": ["User and role management", "Policy and access controls", "Governed automation settings and TSM", "Audit and evidence", "API keys and integrations"],
+    "slug": "security",
+    "anchor": "admin"
+  }
+]

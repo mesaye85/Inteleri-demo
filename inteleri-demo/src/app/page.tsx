@@ -11,6 +11,8 @@ import { DemoFrame } from "@/components/DemoFrame";
 import { VerbSection } from "@/components/VerbSection";
 import { TrustBand } from "@/components/TrustBand";
 import { AccessForm } from "@/components/AccessForm";
+import { PersonaBand } from "@/components/PersonaBand";
+import { ProofStrip } from "@/components/ProofStrip";
 
 export const metadata = pageMeta('home');
 
@@ -27,40 +29,41 @@ export default function Home() {
         >
           <Hero />
 
+          {/* Trust first for enterprise buyers */}
+          <TrustBand />
+
           {/* Interactive Demo Frame */}
-          <section id="demo" className="py-20 section-background">
+          <section id="demo" className="py-16 md:py-20 section-background">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <DemoFrame className="mx-auto max-w-6xl" />
             </div>
           </section>
 
-          {/* Verb Sections */}
+          {/* Verb Sections - value proof */}
           <VerbSection
             title="Secures every request"
-            lead="Security runs first and fails closed—if in doubt, we block and log. Role-based access (RBAC), tenant isolation, and tamper-evident audit logs across apps and agents."
+            lead="Every request is evaluated through policy, tenant boundaries, and role-based access before execution. Inteleri is designed to fail closed, preserve auditability, and reduce operational risk across apps, users, and automated workflows."
             ctaHref="/platform#security"
             ctaLabel="View Security Model"
           />
 
           <VerbSection
-            title="Understands your operations"
-            lead="A real-time data layer turns your operations into predictive KPIs and alerts. Event streaming and Total Performance Intelligence (TPI) drive anomaly detection and smarter decisions."
-            ctaHref="/apps/analytics"
-            ctaLabel="Explore Analytics"
+            title="Understands operational context"
+            lead="Inteleri turns logistics activity into usable operational intelligence. Events, workflow state, risk signals, and service outputs are brought into one governed environment so teams can act with context instead of chasing disconnected tools."
+            ctaHref="/platform#risk"
+            ctaLabel="Explore Risk & Intelligence"
             reverse
           />
 
           <VerbSection
-            title="Orchestrates your flow"
-            lead="TSM (Tokenized Service Model): pay for what you use. Runbooks and autonomous agents coordinate complex workflows with safety envelopes (guardrails that keep automated actions within safe limits) and real-time observability."
+            title="Governs execution"
+            lead="The Tokenized Service Model (TSM) meters platform execution at the service level, making automation measurable, governable, and easier to align with real operational value."
             ctaHref="/tsm"
             ctaLabel="Learn about TSM"
           />
 
-          <BentoGrid />
-
           {/* Metrics Dashboard Strip */}
-          <section className="py-20 section-background">
+          <section className="py-16 md:py-20 section-background">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <MetricStat
@@ -98,18 +101,21 @@ export default function Home() {
             </div>
           </section>
 
-          {/* Trust Band */}
-          <TrustBand />
+          <ProofStrip />
 
-          {/* Access Form */}
-          <section id="request-access" className="py-20 section-background scroll-mt-24">
+          <PersonaBand />
+
+          <BentoGrid />
+
+          {/* Access Form - primary CTA */}
+          <section id="request-access" className="py-16 md:py-20 section-background scroll-mt-24">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                  Request Access
+                  Request access
                 </h2>
-                <p className="text-xl text-white/80 max-w-2xl mx-auto">
-                  Join the waitlist to be among the first to experience the future of logistics intelligence.
+                <p className="type-section-lead text-white/80 mx-auto">
+                  See how Inteleri brings security-native architecture, operational intelligence, and governed execution into a single logistics control surface.
                 </p>
               </div>
               <AccessForm />

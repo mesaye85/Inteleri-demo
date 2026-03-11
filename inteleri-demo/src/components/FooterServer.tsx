@@ -18,7 +18,7 @@ export default function FooterServer() {
               <li><Link href="/platform" className="text-muted hover:text-neon-1 transition-colors">Security</Link></li>
               <li><Link href="/apps" className="text-muted hover:text-neon-1 transition-colors">Apps</Link></li>
               <li><Link href="/tsm" className="text-muted hover:text-neon-1 transition-colors">TSM</Link></li>
-              <li><Link href="/agents" className="text-muted hover:text-neon-1 transition-colors">Agents</Link></li>
+              <li><Link href="/agents" className="text-muted hover:text-neon-1 transition-colors">AI Control</Link></li>
             </ul>
           </div>
           
@@ -27,15 +27,14 @@ export default function FooterServer() {
             <ul className="space-y-2 text-sm">
               <li><Link href="/demos" className="text-muted hover:text-neon-1 transition-colors">Demos</Link></li>
               <li><Link href="/about" className="text-muted hover:text-neon-1 transition-colors">About</Link></li>
-              <li><Link href="/robotics" className="text-muted hover:text-neon-1 transition-colors">Robotics</Link></li>
             </ul>
           </div>
           
           <div>
             <h3 className="text-sm font-semibold text-text mb-4">Compliance</h3>
             <ul className="space-y-2 text-sm">
-              <li><span className="text-muted">SOC 2 Type II</span></li>
-              <li><span className="text-muted">GDPR Compliant</span></li>
+              <li><span className="text-muted">SOC 2–aligned controls</span></li>
+              <li><span className="text-muted">GDPR-aligned design</span></li>
               <li><span className="text-muted">NIST Framework</span></li>
             </ul>
           </div>

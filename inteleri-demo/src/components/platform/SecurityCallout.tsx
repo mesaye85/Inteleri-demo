@@ -10,7 +10,7 @@ export default function SecurityCallout() {
                     Security runs first
                 </h3>
                 <p className="text-lg text-text">
-                    Default‑deny, least privilege, immutable audit logs, tenant‑scoped data access.
+                    Default-deny, least privilege, tenant-scoped execution, and auditability for every meaningful action.
                 </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -20,7 +20,7 @@ export default function SecurityCallout() {
                 </GlassCard>
                 <GlassCard hover className="text-center p-4 bg-white/5 min-w-0">
                     <h4 className="text-sm font-semibold text-neon-2 mb-2">Tenant Scoping</h4>
-                    <p className="text-xs text-muted min-w-0 break-words">Multi-tenant isolation</p>
+                    <p className="text-xs text-muted min-w-0 break-words">Tenant-scoped data & execution</p>
                 </GlassCard>
                 <GlassCard hover className="text-center p-4 bg-white/5 min-w-0">
                     <h4 className="text-sm font-semibold text-neon-3 mb-2">Validation</h4>
@@ -31,12 +31,12 @@ export default function SecurityCallout() {
                     <p className="text-xs text-muted min-w-0 break-words">Rate limiting & throttling</p>
                 </GlassCard>
                 <GlassCard hover className="text-center p-4 bg-white/5 min-w-0">
-                    <h4 className="text-sm font-semibold text-neon-2 mb-2">Anomaly Detection</h4>
-                    <p className="text-xs text-muted min-w-0 break-words">ML-assisted threat detection</p>
+                    <h4 className="text-sm font-semibold text-neon-2 mb-2">Detection</h4>
+                    <p className="text-xs text-muted min-w-0 break-words">Behavioral and rule-based signals</p>
                 </GlassCard>
                 <GlassCard hover className="text-center p-4 bg-white/5 min-w-0">
                     <h4 className="text-sm font-semibold text-neon-3 mb-2">Immutable Audit</h4>
-                    <p className="text-xs text-muted min-w-0 break-words">Tamper-evident, detailed audit trail</p>
+                    <p className="text-xs text-muted min-w-0 break-words">Tamper-evident audit trail</p>
                 </GlassCard>
             </div>
         </GlassCard>

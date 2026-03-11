@@ -13,7 +13,7 @@ const trustItems = [
   {
     icon: FileText,
     title: 'Compliance by Design',
-    description: 'SOC 2 controls mapped · GDPR aligned · NIST/ISO mappings available',
+    description: 'SOC 2–aligned controls · GDPR-aligned design · NIST/ISO mappings available',
     href: '/platform#compliance',
     gradient: 'from-purple-500/20 to-pink-500/20'
   },
@@ -28,10 +28,10 @@ const trustItems = [
 
 export const TrustBand = React.memo(function TrustBand({ className }: { className?: string }) {
   return (
-    <section className={cn('py-16 md:py-20 section-background', className)}>
+    <section className={cn('py-16 md:py-20 section-background', className)} aria-labelledby="trust-band-heading">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-2xl md:text-3xl font-semibold text-white mb-4">
+          <h2 id="trust-band-heading" className="text-2xl md:text-3xl font-semibold text-white mb-4">
             Built by operators for operators
           </h2>
           <p className="text-lg text-white/80 max-w-2xl mx-auto">
@@ -50,7 +50,7 @@ export const TrustBand = React.memo(function TrustBand({ className }: { classNam
                   'group relative overflow-hidden rounded-2xl bg-white/[0.03] p-6',
                   'border border-white/10 backdrop-blur-sm',
                   'hover:bg-white/[0.06] transition-all duration-300',
-                  'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300'
+                  'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neon-1 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)]'
                 )}
               >
                 <div className={cn(

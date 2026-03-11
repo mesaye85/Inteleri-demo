@@ -5,6 +5,12 @@ import { Coins, Shield, Database, Eye, Zap, TrendingUp } from "lucide-react";
 import GlassCard from "./GlassCard";
 import NeonButton from "./NeonButton";
 
+const colorClasses: Record<string, { bg: string; text: string }> = {
+  "neon-1": { bg: "bg-neon-1/20", text: "text-neon-1" },
+  "neon-2": { bg: "bg-neon-2/20", text: "text-neon-2" },
+  "neon-3": { bg: "bg-neon-3/20", text: "text-neon-3" },
+};
+
 const tsmFeatures = [
   {
     title: "Token Registry",
@@ -73,14 +79,14 @@ export default function TSMContent() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+          <h1 className="type-display mb-6">
             <span className="text-text">Tokenized Service Model</span>
             <br />
             <span className="bg-gradient-to-r from-neon-1 via-neon-3 to-neon-1 bg-clip-text text-transparent">
               Pay for Value, Not Shelf‑Ware
             </span>
           </h1>
-          <p className="text-xl text-muted max-w-3xl mx-auto mb-6">
+          <p className="type-section-lead text-muted mx-auto mb-6">
             Shelf‑ware is software or features you pay for but don’t use. TSM changes that: you buy discrete capabilities and only pay when they deliver value. Tokenized capabilities mean measurable outcomes—no big licenses, no unused modules.
           </p>
           <div className="h-px w-48 mx-auto bg-gradient-to-r from-transparent via-neon-1/60 to-transparent" />
@@ -93,12 +99,13 @@ export default function TSMContent() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="mb-16"
         >
-          <h2 className="text-3xl font-bold text-text mb-8 text-center">
+          <h2 className="type-section-title text-text mb-8 text-center">
             TSM Core Features
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {tsmFeatures.map((feature, index) => {
               const Icon = feature.icon;
+              const colors = colorClasses[feature.color] ?? colorClasses["neon-1"];
               return (
                 <motion.div
                   key={feature.title}
@@ -108,13 +115,13 @@ export default function TSMContent() {
                 >
                   <GlassCard className="h-full p-6 md:p-8">
                     <div className="text-center">
-                      <div className={`w-16 h-16 bg-${feature.color}/20 rounded-full flex items-center justify-center mx-auto mb-4`}>
-                        <Icon className={`w-8 h-8 text-${feature.color}`} />
+                      <div className={`w-16 h-16 ${colors.bg} rounded-full flex items-center justify-center mx-auto mb-4`}>
+                        <Icon className={`w-8 h-8 ${colors.text}`} />
                       </div>
-                      <h3 className="text-xl font-semibold text-text mb-3">
+                      <h3 className="type-card-title text-text mb-3">
                         {feature.title}
                       </h3>
-                      <p className="text-muted leading-relaxed">
+                      <p className="type-card-body">
                         {feature.description}
                       </p>
                     </div>

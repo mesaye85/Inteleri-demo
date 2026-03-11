@@ -8,6 +8,15 @@ import GlassCard from "./GlassCard"
 import NeonButton from "./NeonButton"
 import Link from "next/link"
 
+function slugifyId(value: string) {
+  return value
+    .toLowerCase()
+    .trim()
+    .replace(/['"]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+}
+
 export type VerbSectionProps = {
   title: string
   lead: string
@@ -29,8 +38,9 @@ export const VerbSection = React.memo(function VerbSection({
   reverse,
   className
 }: VerbSectionProps) {
+  const titleId = `${slugifyId(title)}-title`
   return (
-    <section className={cn('py-16 md:py-20 section-background overflow-hidden', className)} aria-labelledby={`${title}-title`}>
+    <section className={cn('py-16 md:py-20 section-background overflow-hidden', className)} aria-labelledby={titleId}>
       <div className={cn('mx-auto max-w-6xl px-4')}>
         <div className={cn('grid items-center gap-8 md:gap-12', reverse ? 'md:grid-cols-2 md:[&>*:first-child]:order-2' : 'md:grid-cols-2')}>
           {/* Copy */}
@@ -40,10 +50,10 @@ export const VerbSection = React.memo(function VerbSection({
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 id={`${title}-title`} className="text-2xl md:text-3xl font-semibold tracking-tight text-white">
+            <h2 id={titleId} className="type-section-title text-white">
               {title}
             </h2>
-            <p className="mt-3 text-white/80 max-w-prose leading-relaxed text-lg">{lead}</p>
+            <p className="mt-3 type-section-lead text-white/80">{lead}</p>
             <div className="mt-8">
               <Link href={ctaHref}>
                 <NeonButton variant="neon">
