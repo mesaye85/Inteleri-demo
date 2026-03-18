@@ -114,7 +114,7 @@ export default function AppsPageClient() {
                       transition={{ duration: 0.5, delay: index * 0.06 }}
                     >
                       <AppCard
-                        slug={app.slug}
+                        slug={app.slug!}
                         title={app.title}
                         summary={app.summary}
                         pillars={app.pillars}
@@ -142,7 +142,7 @@ export default function AppsPageClient() {
                     transition={{ duration: 0.5, delay: index * 0.06 }}
                   >
                     <AppCard
-                      slug={app.slug}
+                      slug={app.slug!}
                       title={app.title}
                       summary={app.summary}
                       pillars={app.pillars}

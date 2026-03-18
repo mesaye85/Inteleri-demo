@@ -68,7 +68,7 @@ export default function BidList({ loadId }: BidListProps) {
                         </div>
                         <div className="text-right">
                             <div className="text-lg font-bold text-neon-1">
-                                ${bid.total_amount}
+                                ${bid.total_amount ?? bid.bid_amount ?? "0.00"}
                             </div>
                             <Badge variant="outline" className="text-xs border-white/20">
                                 {bid.status}

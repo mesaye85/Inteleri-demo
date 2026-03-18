@@ -1,0 +1,8 @@
+services:
+  demo:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "${DEMO_PORT:-3001}:3000"

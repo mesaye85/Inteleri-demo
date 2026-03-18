@@ -77,7 +77,7 @@ export default function AppPage({ params }: AppPageProps) {
             transition={{ duration: 0.8 }}
             className="text-center mb-12"
           >
-            <div className="text-6xl mb-4">{iconMap[app.slug] || "📱"}</div>
+            <div className="text-6xl mb-4">{iconMap[app.slug!] || "📱"}</div>
             <h1 className="type-display mb-4">
               <span className="bg-gradient-to-r from-neon-1 via-neon-3 to-neon-1 bg-clip-text text-transparent">{app.title}</span>
             </h1>

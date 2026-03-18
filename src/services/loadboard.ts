@@ -96,7 +96,7 @@ const MOCK_LOADS: Load[] = [
         id: '3',
         title: 'Construction Materials',
         description: 'Lumber and steel beams.',
-        load_type: 'flatbed',
+        load_type: 'full_truckload',
         equipment_type: 'flatbed',
         weight: '45000.00',
         pickup_location: '101 Industrial Park',

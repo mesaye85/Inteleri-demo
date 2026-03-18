@@ -16,12 +16,14 @@ export interface Load {
     pickup_zip: string;
     pickup_country: string;
     pickup_date: string;
+    pickup_notes?: string;
     delivery_location: string;
     delivery_city: string;
     delivery_state: string;
     delivery_zip: string;
     delivery_country: string;
     delivery_date: string;
+    delivery_notes?: string;
     rate_type: RateType;
     rate_amount: string;
     rate_currency: string;
@@ -60,6 +62,7 @@ export interface Bid {
     submitted_at: string;
     updated_at: string;
     bid_amount?: string;
+    total_amount?: string;
     notes?: string;
     driver_name?: string;
     bid_currency?: string;

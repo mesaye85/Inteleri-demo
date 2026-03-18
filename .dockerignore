@@ -1,0 +1,12 @@
+﻿Dockerfile
+.dockerignore
+node_modules
+**/node_modules
+.next
+**/.next
+.git
+.github
+.env*
+.vscode
+docs
+inteleri-demo

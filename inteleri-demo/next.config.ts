@@ -2,6 +2,9 @@ import type { NextConfig } from "next";
 import path from "path";
 
 const nextConfig: NextConfig = {
+  // Output standalone bundle for Docker deployments
+  output: 'standalone',
+
   // Monorepo / multiple-lockfile safety:
   // Force Next to use this app directory as the tracing root to avoid
   // "Invariant: Expected clientReferenceManifest to be defined."
